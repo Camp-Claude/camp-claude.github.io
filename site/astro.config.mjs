@@ -6,12 +6,11 @@ import sitemap from '@astrojs/sitemap';
 // Phase 2 (paid video library) will flip `output` to 'server' and enable a Clerk integration.
 
 // When deploying to GitHub Pages without the custom domain, set GH_PAGES=true
-// so links resolve under /campclaude. Remove once campclaude.ai is the primary.
+// so canonical URLs point at camp-claude.github.io. Remove once campclaude.ai is the primary.
 const isGhPages = process.env.GH_PAGES === 'true';
 
 export default defineConfig({
   site: isGhPages ? 'https://camp-claude.github.io' : 'https://campclaude.ai',
-  base: isGhPages ? '/campclaude' : undefined,
   output: 'static',
   trailingSlash: 'ignore',
 

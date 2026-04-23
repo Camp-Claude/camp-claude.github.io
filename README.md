@@ -6,7 +6,7 @@ Most agent training starts too late. It assumes you already know what an LLM is,
 
 The goal isn't to turn you into an engineer. It's to make you a competent, confident collaborator with a powerful agent.
 
-**Live site:** https://camp-claude.github.io/campclaude/
+**Live site:** https://camp-claude.github.io/
 
 ---
 
@@ -54,9 +54,9 @@ The site reads markdown directly from `../content/`, so edits to curriculum file
 
 ## Deployment
 
-`main` auto-deploys to GitHub Pages via the [deploy workflow](.github/workflows/deploy.yml).
+`main` auto-deploys to GitHub Pages via the [deploy workflow](.github/workflows/deploy.yml). The repo is named `camp-claude.github.io` so Pages serves at the org root — no path prefix.
 
-Until the `campclaude.ai` domain is wired up, the site serves from `camp-claude.github.io/campclaude/`. The Astro config uses a `GH_PAGES` env var to set the correct `base` path during the Pages build — remove it from the workflow once the custom domain is live.
+When the `campclaude.ai` domain is ready, add a `CNAME` file + DNS and drop the `GH_PAGES` env var from the workflow.
 
 ## Contributing
 
