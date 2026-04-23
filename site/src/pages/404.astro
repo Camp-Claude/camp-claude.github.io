@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Not found" description="Page not found.">
+  <main>
+    <div class="error-code">Error · 404 · Not found</div>
+    <div class="big-num">4<span class="digit">·</span>4</div>
+    <h1>You've wandered <em>off the path</em>.</h1>
+    <p class="dek">The page you were looking for doesn't exist — or maybe it did once and we moved it. Either way, here are three doors back to familiar ground.</p>
+
+    <div class="links">
+      <a href="/"><span class="label">Back to start</span><span class="name">The <em>home</em> page</span></a>
+      <a href="/learn"><span class="label">Read the curriculum</span><span class="name">The <em>Learn</em> index</span></a>
+      <a href="/cohort"><span class="label">Join a cohort</span><span class="name">The <em>Foundations</em> cohort</span></a>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main { text-align: center; padding: 72px 48px; max-width: 900px; margin: 0 auto; }
+  .error-code { font-family: var(--mono); font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--rust); margin-bottom: 32px; }
+  .big-num { font-family: var(--serif); font-style: italic; font-size: 240px; line-height: 0.85; letter-spacing: -0.04em; color: var(--ink); margin: 0 0 24px; }
+  .big-num .digit { color: var(--rust); }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 56px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 auto 20px; text-wrap: balance; max-width: 18ch; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .dek { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1.35; color: var(--ink-soft); margin: 0 auto 48px; max-width: 52ch; }
+  .links { display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 16px; max-width: 760px; margin: 0 auto; }
+  .links a { display: block; text-align: center; padding: 24px 16px; background: var(--paper-soft); border: 1px solid var(--line); border-radius: 3px; color: var(--ink); text-decoration: none; }
+  .links a:hover { background: var(--cream); text-decoration: none; }
+  .links a .label { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 6px; }
+  .links a .name { display: block; font-family: var(--serif); font-size: 22px; letter-spacing: -0.01em; }
+  .links a .name em { color: var(--rust); font-style: italic; }
+  @media (max-width: 760px) {
+    .big-num { font-size: 140px; } h1 { font-size: 36px; } .links { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Corporate & regulated cohorts"
+  description="Private cohorts for teams and regulated firms. Financial, legal, healthcare. Optional Corporate Security Module."
+  activeNav="cohort"
+>
+  <section class="hero">
+    <div class="eyebrow">For teams &amp; regulated firms</div>
+    <h1>Bring Camp Claude <em>to your team</em>.</h1>
+    <p class="dek">Private cohorts built around your tools, your workflows, your compliance requirements. For teams of 10–40. Regulated industries add a Corporate Security Module that passes audit.</p>
+  </section>
+
+  <section class="strip cream">
+    <div class="inner">
+      <div class="section-eyebrow">Two tiers</div>
+      <h2 class="section-h2">Depending on whether <em>compliance is in the room</em>.</h2>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="tag">Tier one · Most teams</div>
+          <h3>Private cohort</h3>
+          <div class="price-line"><span class="currency">$</span>15K–35K</div>
+          <div class="price-note">One-time · 4–6 weeks</div>
+          <p class="lede">Foundations and full cohort delivered privately, tuned to your team's connectors and industry.</p>
+          <ul>
+            <li>4–6 live sessions delivered to your team</li>
+            <li>Curriculum tuned to your connectors &amp; workflows</li>
+            <li>Per-team Q&amp;A channel</li>
+            <li>Session recordings &amp; takeaway library</li>
+            <li>One industry-specific automation built together</li>
+            <li>Post-cohort office hours for 30 days</li>
+          </ul>
+          <a href="#inquiry" class="tier-cta">Request a proposal →</a>
+        </div>
+        <div class="tier featured">
+          <div class="tag">Tier two · Regulated</div>
+          <h3>Regulated + <em>Security Module</em></h3>
+          <div class="price-line"><span class="currency">$</span>75K–150K</div>
+          <div class="price-note">One-time · 8–12 weeks</div>
+          <p class="lede">Finance, legal, healthcare, insurance. Includes the Corporate Security Module for compliance teams.</p>
+          <ul>
+            <li>Everything in Tier One, plus:</li>
+            <li>3-session Corporate Security Module for compliance</li>
+            <li>Co-authored governance pattern tuned to your regs</li>
+            <li>Acceptable Use Policy template for your AUP</li>
+            <li>Regulatory mapping to your specific frameworks</li>
+            <li>Incident response playbook for AI misuse</li>
+          </ul>
+          <a href="#inquiry" class="tier-cta">Request a proposal →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" id="inquiry">
+    <div class="inner">
+      <div class="section-eyebrow">Request a proposal</div>
+      <h2 class="section-h2 center">Tell us about your team.</h2>
+      <p class="lead center">Response in 48 hours. If there's a fit, we'll schedule a 30-minute discovery call.</p>
+
+      <form class="inquiry" action="#" method="post">
+        <div class="two-col">
+          <label><span class="field-label">Your name</span><input type="text" name="name" required placeholder="e.g. Sam Chen" /></label>
+          <label><span class="field-label">Role</span><input type="text" name="role" required placeholder="e.g. CTO / Head of L&amp;D" /></label>
+        </div>
+        <div class="two-col">
+          <label><span class="field-label">Company</span><input type="text" name="company" required placeholder="e.g. Acme Wealth" /></label>
+          <label><span class="field-label">Work email</span><input type="email" name="email" required placeholder="you@company.com" /></label>
+        </div>
+        <label>
+          <span class="field-label">Which tier fits?</span>
+          <select name="tier" required>
+            <option value="">Select one…</option>
+            <option>Tier One · Private cohort ($15K–35K)</option>
+            <option>Tier Two · Regulated + Security Module ($75K–150K)</option>
+            <option>Not sure — advise me</option>
+          </select>
+        </label>
+        <label><span class="field-label">Team size &amp; industry</span><input type="text" name="team" required placeholder="e.g. 20-person wealth management team" /></label>
+        <label><span class="field-label">Regulatory environment (if any)</span><input type="text" name="regs" placeholder="e.g. SEC + FINRA, HIPAA, EU GDPR, none" /></label>
+        <label><span class="field-label">What's the outcome you want?</span><textarea name="goal" placeholder="A few sentences on what you want your team to be able to do in 90 days."></textarea></label>
+        <button type="submit">Request a proposal</button>
+        <p class="small">Camp Claude is independent, not affiliated with Anthropic. Response within 48 hours.</p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { max-width: 1200px; margin: 0 auto; padding: 80px 48px 48px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 88px; line-height: 0.96; letter-spacing: -0.025em; color: var(--ink); margin: 0 0 28px; max-width: 14ch; text-wrap: balance; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .dek { font-family: var(--serif); font-style: italic; font-size: 30px; line-height: 1.3; color: var(--ink-soft); margin: 0; max-width: 52ch; text-wrap: pretty; }
+
+  .strip { padding: 80px 48px; border-top: 1px solid var(--line); }
+  .strip .inner { max-width: 1200px; margin: 0 auto; }
+  .strip.cream { background: var(--cream); }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 18px; }
+  .section-h2 { font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 28px; text-wrap: balance; }
+  .section-h2 em { color: var(--rust); font-style: italic; }
+  .section-h2.center, .lead.center { text-align: center; }
+  .lead { max-width: 62ch; color: var(--ink-soft); font-size: 17px; margin: 0 auto 48px; }
+
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
+  .tier { background: var(--paper); padding: 44px 40px; border: 1px solid var(--line); border-radius: 3px; display: flex; flex-direction: column; }
+  .tier.featured { background: var(--ink); color: var(--paper); border: none; }
+  .tier .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+  .tier.featured .tag { color: var(--rust-soft); }
+  .tier h3 { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 12px; }
+  .tier h3 em { color: var(--rust-soft); font-style: italic; }
+  .tier .price-line { font-family: var(--serif); font-size: 54px; line-height: 1; letter-spacing: -0.02em; font-style: italic; margin: 8px 0 10px; }
+  .tier .price-line .currency { font-size: 24px; vertical-align: super; color: var(--rust); margin-right: 4px; }
+  .tier.featured .price-line .currency { color: var(--rust-soft); }
+  .tier .price-note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; }
+  .tier.featured .price-note { color: rgba(244,238,227,0.55); }
+  .tier p.lede { font-size: 15px; line-height: 1.5; color: var(--ink-soft); margin: 0 0 24px; }
+  .tier.featured p.lede { color: rgba(244,238,227,0.72); }
+  .tier ul { padding: 0; margin: 0 0 28px; list-style: none; }
+  .tier li { padding: 10px 0; font-size: 14px; line-height: 1.45; border-top: 1px solid var(--line-soft); display: flex; gap: 12px; }
+  .tier.featured li { border-top-color: rgba(244,238,227,0.12); }
+  .tier li::before { content: "+"; color: var(--sage); font-family: var(--mono); font-size: 14px; line-height: 1.45; flex-shrink: 0; }
+  .tier.featured li::before { color: var(--rust-soft); }
+  .tier .tier-cta { display: block; text-align: center; background: var(--ink); color: var(--paper); padding: 14px 22px; border-radius: 2px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; text-decoration: none; margin-top: auto; }
+  .tier.featured .tier-cta { background: var(--paper); color: var(--ink); }
+  .tier .tier-cta:hover { background: var(--rust); }
+  .tier.featured .tier-cta:hover { background: var(--rust-soft); color: var(--ink); }
+
+  .inquiry { max-width: 720px; margin: 0 auto; background: var(--paper); padding: 48px; border-radius: 3px; border: 1px solid var(--line); }
+  .inquiry label { display: block; margin-bottom: 20px; }
+  .inquiry .field-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; display: block; }
+  .inquiry input, .inquiry textarea, .inquiry select { width: 100%; padding: 12px 16px; border: 1px solid var(--line); border-radius: 2px; background: var(--paper-soft); font-family: var(--sans); font-size: 15px; color: var(--ink); }
+  .inquiry textarea { min-height: 100px; resize: vertical; }
+  .inquiry button { display: block; width: 100%; background: var(--ink); color: var(--paper); padding: 16px 20px; border: none; border-radius: 2px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; cursor: pointer; margin-top: 8px; }
+  .inquiry button:hover { background: var(--rust); }
+  .inquiry .small { font-size: 13px; color: var(--muted); margin: 16px 0 0; text-align: center; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  @media (max-width: 960px) {
+    .hero { padding: 48px 24px; }
+    h1 { font-size: 48px; }
+    .dek { font-size: 22px; }
+    .tiers, .two-col { grid-template-columns: 1fr; gap: 24px; }
+    .section-h2 { font-size: 36px; }
+    .inquiry { padding: 28px; }
+    .strip { padding: 48px 24px; }
+  }
+</style>

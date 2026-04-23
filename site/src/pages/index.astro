@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="The open curriculum + bootcamp for working with Claude"
+  description="A three-session live bootcamp teaching you to build one real automation that runs without you. Plus an open curriculum, free to read."
+  activeNav="home"
+>
+
+  <!-- Hero — short, dual-CTA, router -->
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Camp Claude · A program of RUDI</div>
+      <h1>You've been using Claude as <em>a chatbot</em>. It can be your <em>coworker</em>.</h1>
+      <p class="dek">Three live sessions. Build one automation that runs without you. Next cohort starts June 3.</p>
+      <div class="hero-actions">
+        <a href="/bootcamp" class="cta-primary">Join the Bootcamp — $97</a>
+        <a href="/learn" class="cta-ghost">Or read the curriculum first →</a>
+      </div>
+    </div>
+
+    <div class="doors" aria-hidden="true">
+      <svg viewBox="0 0 200 280" width="110" height="154">
+        <path d="M30 270 L30 30 L170 30 L170 270" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <path d="M20 270 L180 270" stroke="#1F1C17" stroke-width="3" fill="none"/>
+        <circle cx="150" cy="155" r="5" fill="#1F1C17"/>
+        <path d="M60 95 L60 140 L90 140 L105 160 L100 140 L140 140 L140 95 Z" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <circle cx="80" cy="117" r="3" fill="#1F1C17"/><circle cx="100" cy="117" r="3" fill="#1F1C17"/><circle cx="120" cy="117" r="3" fill="#1F1C17"/>
+      </svg>
+      <svg viewBox="0 0 200 280" width="110" height="154">
+        <path d="M30 270 L30 30 L170 30 L170 270" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <path d="M20 270 L180 270" stroke="#1F1C17" stroke-width="3" fill="none"/>
+        <circle cx="150" cy="155" r="5" fill="#1F1C17"/>
+        <path d="M60 100 L90 100 L95 110 L140 110 L140 170 L60 170 Z" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <path d="M72 125 L128 125" stroke="#1F1C17" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+        <path d="M72 140 L128 140" stroke="#1F1C17" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+        <path d="M72 155 L110 155" stroke="#1F1C17" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+      </svg>
+      <svg viewBox="0 0 200 280" width="110" height="154">
+        <path d="M30 270 L30 30 L170 30 L170 270" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <path d="M20 270 L180 270" stroke="#1F1C17" stroke-width="3" fill="none"/>
+        <circle cx="150" cy="155" r="5" fill="#1F1C17"/>
+        <path d="M55 95 L145 95 L145 170 L55 170 Z" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <path d="M55 110 L145 110" stroke="#1F1C17" stroke-width="3" opacity="0.55"/>
+        <path d="M68 130 L80 138 L68 146" stroke="#1F1C17" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M88 146 L120 146" stroke="#1F1C17" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+        <path d="M68 158 L115 158" stroke="#1F1C17" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Thesis strip -->
+  <section class="strip ink">
+    <div class="inner">
+      <div class="section-eyebrow">Why three doors</div>
+      <div class="thesis">
+        <p>Chat is <strong>a chatbot</strong>. Cowork is <strong>a task executor</strong>. Code is <strong>an agentic workstation</strong>.</p>
+        <p>Same account. Same brand. <em>Three different workspaces, each built for a different job.</em> Most people only ever open the first one. The bootcamp opens the second.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three paths -->
+  <section class="strip">
+    <div class="inner">
+      <div class="section-eyebrow">Three ways in</div>
+      <h2 class="section-h2">Buy the <em>bootcamp</em>. Read the <em>curriculum</em>. Or <em>teach</em> it yourself.</h2>
+
+      <div class="paths">
+        <div class="path featured">
+          <div class="path-label">Most popular · Next cohort June 3</div>
+          <div class="price">$97</div>
+          <h3>The <em>Bootcamp</em>.</h3>
+          <p>Three live sessions. Build one real automation that runs without you. Ship by the end of Session 3.</p>
+          <a href="/bootcamp" class="path-cta">See the bootcamp →</a>
+        </div>
+
+        <div class="path">
+          <div class="path-label">Open curriculum</div>
+          <div class="price">Free</div>
+          <h3>Read the <em>articles</em>.</h3>
+          <p>Eleven published articles — the three doors, the automation equation, governance patterns for regulated industries, agent security. Free to read, SEO-indexed.</p>
+          <a href="/learn" class="path-cta">Start reading →</a>
+        </div>
+
+        <div class="path">
+          <div class="path-label">Teach it yourself</div>
+          <div class="price">Apply</div>
+          <h3>Become a <em>facilitator</em>.</h3>
+          <p>Study the curriculum, complete train-the-trainer, run your own Camp Claude cohorts under a shared brand. Opens Q3 2026.</p>
+          <a href="/facilitate" class="path-cta">See the pathway →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="strip cream">
+    <div class="inner credibility">
+      <div>
+        <div class="section-eyebrow">Who runs this</div>
+        <h2 class="cred-h2">Camp Claude is taught by <em>Brandon Z. Hoff</em>, founder of RUDI.</h2>
+        <p>RUDI — Responsible Use of Digital Intelligence — works with corporate partners and state education systems on AI fluency programs. Past and current engagements include <strong>NSF TechAccess positioning</strong>, <strong>Avanade INSPIRE</strong>, <strong>Warren County Educational Service Center</strong>, and <strong>ULI Cincinnati</strong>.</p>
+        <p>Camp Claude is the hands-on cohort arm of RUDI's educational portfolio — the piece that takes professionals from <em>"I use ChatGPT"</em> to <em>"I have an automation running in my account."</em></p>
+        <p class="learn-more"><a href="https://learnrudi.com">See RUDI's broader work at learnrudi.com →</a></p>
+      </div>
+      <aside class="partners">
+        <div class="partners-label">Partners &amp; programs</div>
+        <ul>
+          <li>NSF TechAccess AI-Ready America</li>
+          <li>Avanade INSPIRE</li>
+          <li>Warren County ESC</li>
+          <li>ULI Cincinnati</li>
+          <li>Ohio state initiatives</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Final route-back -->
+  <section class="strip">
+    <div class="inner final">
+      <h2 class="final-h2">Ready to <em>stop using 10%</em> of Claude?</h2>
+      <div class="final-actions">
+        <a href="/bootcamp" class="cta-primary large">Join the Bootcamp — $97</a>
+        <a href="/learn" class="cta-ghost">Or read the curriculum first →</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero { padding: 96px 48px 72px; max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: center; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 88px; line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); margin: 0 0 28px; text-wrap: balance; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .dek { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1.3; color: var(--ink-soft); margin: 0 0 40px; max-width: 48ch; }
+  .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .cta-primary { display: inline-block; background: var(--ink); color: var(--paper); padding: 16px 28px; border-radius: 2px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; font-weight: 500; }
+  .cta-primary:hover { background: var(--rust); color: var(--paper); text-decoration: none; }
+  .cta-primary.large { padding: 20px 36px; font-size: 13px; }
+  .cta-ghost { display: inline-block; padding: 12px 0; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); text-decoration: none; border-bottom: 1px solid var(--rust); }
+  .cta-ghost:hover { color: var(--ink); border-bottom-color: var(--ink); text-decoration: none; }
+
+  .doors { display: flex; justify-content: space-between; align-items: end; gap: 8px; }
+
+  /* Section scaffolding */
+  .strip { padding: 88px 48px; border-top: 1px solid var(--line); }
+  .strip .inner { max-width: 1400px; margin: 0 auto; }
+  .strip.ink { background: var(--ink); color: var(--paper); border-top: none; }
+  .strip.cream { background: var(--cream); }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 18px; }
+  .strip.ink .section-eyebrow { color: var(--rust-soft); }
+  .section-h2 { font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 40px; text-wrap: balance; }
+  .section-h2 em { color: var(--rust); font-style: italic; }
+
+  /* Thesis */
+  .thesis { max-width: 920px; font-family: var(--serif); font-style: italic; font-size: 32px; line-height: 1.35; color: rgba(244,238,227,0.88); }
+  .thesis p { margin: 0 0 20px; }
+  .thesis p strong { color: var(--paper); font-style: normal; font-weight: 400; }
+
+  /* Three paths */
+  .paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .path { background: var(--paper); padding: 40px 32px; border: 1px solid var(--line); border-radius: 3px; display: flex; flex-direction: column; gap: 16px; }
+  .path.featured { background: var(--ink); color: var(--paper); border: none; }
+  .path .path-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); }
+  .path.featured .path-label { color: var(--rust-soft); }
+  .path .price { font-family: var(--serif); font-size: 52px; line-height: 1; letter-spacing: -0.02em; font-style: italic; color: var(--ink); }
+  .path.featured .price { color: var(--paper); }
+  .path h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.1; margin: 0; }
+  .path h3 em { color: var(--rust); font-style: italic; }
+  .path.featured h3 em { color: var(--rust-soft); }
+  .path p { font-size: 15px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+  .path.featured p { color: rgba(244,238,227,0.72); }
+  .path .path-cta { margin-top: auto; display: inline-block; padding: 12px 0; font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); border-bottom: 1px solid var(--rust); align-self: flex-start; text-decoration: none; }
+  .path.featured .path-cta { color: var(--rust-soft); border-bottom-color: var(--rust-soft); }
+
+  /* Credibility */
+  .credibility { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; align-items: start; }
+  .cred-h2 { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 24px; text-wrap: balance; }
+  .cred-h2 em { color: var(--rust); font-style: italic; }
+  .credibility p { font-size: 17px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 16px; max-width: 58ch; }
+  .credibility p strong { color: var(--ink); font-weight: 500; }
+  .credibility .learn-more { margin-top: 20px; }
+  .credibility .learn-more a { color: var(--rust); font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--rust); padding-bottom: 2px; }
+  .partners { background: var(--paper); padding: 32px; border: 1px solid var(--line); border-radius: 3px; }
+  .partners-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 16px; }
+  .partners ul { list-style: none; padding: 0; margin: 0; }
+  .partners li { padding: 10px 0; border-top: 1px solid var(--line-soft); font-size: 14px; color: var(--ink); }
+  .partners li:first-child { border-top: none; padding-top: 0; }
+
+  /* Final */
+  .final { text-align: center; }
+  .final-h2 { font-family: var(--serif); font-weight: 400; font-size: 56px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 36px; font-style: italic; text-wrap: balance; }
+  .final-h2 em { color: var(--rust); }
+  .final-actions { display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap; }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+    h1 { font-size: 48px; }
+    .dek { font-size: 22px; }
+    .section-h2 { font-size: 36px; }
+    .cred-h2 { font-size: 28px; }
+    .paths { grid-template-columns: 1fr; }
+    .credibility { grid-template-columns: 1fr; gap: 32px; }
+    .strip { padding: 56px 24px; }
+    .thesis { font-size: 22px; }
+    .final-h2 { font-size: 36px; }
+  }
+</style>

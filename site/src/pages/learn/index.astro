@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Pull all non-draft entries from both collections
+const teachEntries = (await getCollection('teach', ({ data }) => !data.draft))
+  .sort((a, b) => (a.data.module ?? 99) - (b.data.module ?? 99));
+
+const referenceEntries = (await getCollection('reference', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout
+  title="Learn · The open curriculum"
+  description="Eleven articles plus reference patterns for working with Claude. Free to read, published openly."
+  activeNav="learn"
+>
+
+  <section class="hero">
+    <div class="eyebrow">The open curriculum</div>
+    <h1>Eleven articles. <em>One map</em> of working with Claude.</h1>
+    <p class="dek">Teaching assets, reference patterns, and the practical architecture behind every Camp Claude cohort — published openly because the information alone isn't the product. The guided practice is.</p>
+  </section>
+
+  <section id="teach" class="strip">
+    <div class="inner">
+      <div class="section-eyebrow">Teach · Core curriculum</div>
+      <h2 class="section-h2">Read in <em>order</em>.</h2>
+      <p class="section-lead">The foundational modules. Each builds on the one before.</p>
+
+      <div class="article-list">
+        {teachEntries.map(entry => (
+          <a class="article-row" href={`/learn/${entry.id.replace(/\.md$/, '')}`}>
+            <div class="module-num">
+              {entry.data.module ? `Module ${String(entry.data.module).padStart(2, '0')}` : 'Teach'}
+            </div>
+            <div>
+              <h3 set:html={entry.data.title} />
+              {entry.data.description && <p>{entry.data.description}</p>}
+              <div class="tier">Free · {entry.data.section === 'teach' ? 'Foundational' : 'Reference'}</div>
+            </div>
+            <div></div>
+            <div class="read-time">
+              {entry.data.readTime ?? ''} <span class="arrow">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {referenceEntries.length > 0 && (
+    <section id="reference" class="strip cream">
+      <div class="inner">
+        <div class="section-eyebrow">Reference · Regulated industries</div>
+        <h2 class="section-h2">For compliance, security, and <em>risk teams</em>.</h2>
+        <p class="section-lead">Three reference patterns for regulated-industry adoption: data governance, compliance mindset, and agent security.</p>
+
+        <div class="article-list">
+          {referenceEntries.map(entry => (
+            <a class="article-row" href={`/learn/${entry.id.replace(/\.md$/, '')}`}>
+              <div class="module-num">Reference</div>
+              <div>
+                <h3 set:html={entry.data.title} />
+                {entry.data.description && <p>{entry.data.description}</p>}
+                <div class="tier">Free · For regulated firms</div>
+              </div>
+              <div></div>
+              <div class="read-time">
+                {entry.data.readTime ?? ''} <span class="arrow">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+</BaseLayout>
+
+<style>
+  .hero { max-width: 1200px; margin: 0 auto; padding: 72px 48px 40px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 88px; line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); margin: 0 0 28px; max-width: 18ch; text-wrap: balance; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .dek { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1.3; color: var(--ink-soft); margin: 0; max-width: 52ch; text-wrap: pretty; }
+
+  .strip { padding: 88px 48px; border-top: 1px solid var(--line); }
+  .strip.cream { background: var(--cream); }
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 18px; }
+  .section-h2 { font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 24px; text-wrap: balance; }
+  .section-h2 em { color: var(--rust); font-style: italic; }
+  .section-lead { font-size: 17px; line-height: 1.5; color: var(--ink-soft); max-width: 62ch; margin-bottom: 40px; }
+
+  .article-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .article-row { display: grid; grid-template-columns: 120px 1fr 200px 140px; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; text-decoration: none; color: inherit; transition: background 0.12s; }
+  .article-row:hover { background: var(--cream); text-decoration: none; }
+  .article-row .module-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); }
+  .article-row h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .article-row h3 :global(em) { color: var(--rust); font-style: italic; }
+  .article-row p { font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0; max-width: 58ch; }
+  .article-row .tier { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); margin-top: 8px; }
+  .article-row .read-time { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); text-align: right; white-space: nowrap; }
+  .article-row .arrow { display: inline-block; margin-left: 8px; color: var(--muted); transition: transform 0.15s, color 0.15s; }
+  .article-row:hover .arrow { color: var(--rust); transform: translateX(4px); }
+
+  @media (max-width: 960px) {
+    .hero { padding: 48px 24px 24px; }
+    h1 { font-size: 48px; }
+    .dek { font-size: 22px; }
+    .section-h2 { font-size: 36px; }
+    .article-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
+    .article-row .read-time { text-align: left; }
+    .strip { padding: 56px 24px; }
+  }
+</style>

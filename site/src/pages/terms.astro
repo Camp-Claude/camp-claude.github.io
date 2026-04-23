@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Terms of service" description="The terms governing enrollment, use of content, and the facilitator license for Camp Claude.">
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <span>Terms of service</span>
+    </div>
+
+    <h1>Terms of <em>service</em></h1>
+    <div class="updated">Last updated · April 23, 2026</div>
+
+    <p class="intro">The rules of the road for enrolling in a cohort, reading the open curriculum, and participating in the facilitator pathway. Written plainly on purpose.</p>
+
+    <h2>1. About these terms</h2>
+    <p>By using Camp Claude, you agree to these terms. If you don't, please don't use the service. Operated by <strong>RUDI LLC</strong>.</p>
+
+    <h2>2. The open curriculum</h2>
+    <p>Articles under <a href="/learn">/learn</a> are published free and available to read without an account. You may share, cite, and link freely. You may not republish whole articles without permission. Content is © 2026 RUDI LLC.</p>
+
+    <h2>3. Cohort enrollment</h2>
+    <p><strong>What you get.</strong> Access to the live sessions, community, recordings, and materials listed on the cohort page at enrollment.</p>
+    <p><strong>Payment.</strong> Processed through Stripe. Enrollment authorizes the charge. Individual cohort enrollments are one-time payments. Corporate engagements follow the signed proposal.</p>
+    <p><strong>Refunds.</strong> Foundations: 30-day guarantee from Session 1 — attend the first two, email us within 7 days of session 2 for a full refund. Full Camp Claude: same 30-day window, non-refundable after Session 3. Corporate: per the proposal.</p>
+
+    <h2>4. Community conduct</h2>
+    <p>Treat others with respect. Keep shared cohort material confidential. No solicitation or unrelated promotion. No harassment. We reserve the right to remove participants who violate these standards.</p>
+
+    <h2>5. The facilitator license</h2>
+    <p>Certified facilitators receive a limited, non-exclusive, non-transferable license to deliver Camp Claude cohorts. Facilitators may not modify the core curriculum, sublicense it, or extract portions into competing offerings. Subject to annual recertification. Full terms in the certification packet.</p>
+
+    <h2>6. Intellectual property</h2>
+    <p>The Camp Claude curriculum, brand, and materials are owned by RUDI LLC. You receive a personal, non-transferable license for your own learning. You retain full ownership of work you create during cohorts — your automations, skills, and artifacts are yours.</p>
+
+    <h2>7. Not affiliated with Anthropic</h2>
+    <p>Camp Claude is independent. We are not affiliated with, endorsed by, or sponsored by Anthropic. "Claude" is Anthropic's trademark, used here descriptively. Your use of Claude itself is governed by <a href="https://www.anthropic.com/legal" target="_blank" rel="noopener">Anthropic's terms</a>.</p>
+
+    <h2>8. Disclaimers</h2>
+    <p><strong>No professional advice.</strong> We teach how to work with Claude. The reference patterns for regulated industries are educational, not a substitute for qualified legal or compliance counsel.</p>
+    <p><strong>No results guaranteed.</strong> Outcomes depend on your effort, context, and the tools' capabilities, which change over time.</p>
+    <p><strong>Service as-is.</strong> Live sessions may be rescheduled for illness or emergency; recordings and make-ups will be provided.</p>
+
+    <h2>9. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, RUDI LLC's total liability is limited to the amount you paid to us in the 12 months preceding the claim. Not liable for indirect, incidental, or consequential damages.</p>
+
+    <h2>10. Governing law</h2>
+    <p>Governed by the laws of the State of Ohio, United States. Disputes resolved in the state or federal courts of Ohio.</p>
+
+    <h2>11. Changes</h2>
+    <p>When we make material changes, we'll update the date above and email enrolled cohort members about significant changes.</p>
+
+    <div class="contact-box">
+      <p>Questions? Email <a href="mailto:legal@campclaude.ai">legal@campclaude.ai</a> or write to RUDI LLC.</p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main { max-width: 780px; margin: 0 auto; padding: 72px 48px 96px; }
+  .breadcrumb { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--rust); }
+  .breadcrumb .sep { margin: 0 10px; opacity: 0.5; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 0.98; letter-spacing: -0.02em; margin: 0 0 16px; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .updated { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+  .intro { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink-soft); margin: 0 0 40px; max-width: 56ch; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -0.015em; margin: 40px 0 16px; }
+  p { margin: 0 0 1em; max-width: 64ch; color: var(--ink-soft); }
+  p strong { color: var(--ink); font-weight: 500; }
+  .contact-box { background: var(--cream); border-left: 3px solid var(--rust); padding: 24px 28px; margin: 32px 0; }
+  .contact-box p { margin-bottom: 0; }
+  @media (max-width: 760px) { main { padding: 48px 24px; } h1 { font-size: 40px; } h2 { font-size: 26px; } .intro { font-size: 18px; } }
+</style>

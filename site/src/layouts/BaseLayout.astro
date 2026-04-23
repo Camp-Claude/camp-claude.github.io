@@ -1,0 +1,119 @@
+---
+// BaseLayout — wraps every page with nav, footer, fonts, and shared tokens.
+import '../styles/tokens.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  activeNav?: 'home' | 'learn' | 'cohort' | 'facilitate' | 'none';
+}
+
+const { title, description, activeNav = 'none' } = Astro.props;
+
+const defaultDesc = 'The open curriculum for working with Claude as a real coworker.';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} — Camp Claude</title>
+  <meta name="description" content={description ?? defaultDesc} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description ?? defaultDesc} />
+  <meta property="og:site_name" content="Camp Claude" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+</head>
+
+<body>
+  <header class="topnav">
+    <div class="brand"><a href="/">Camp Claude<span class="dot">.</span></a></div>
+    <nav>
+      <a href="/" class={activeNav === 'home' ? 'active' : ''}>Home</a>
+      <a href="/learn" class={activeNav === 'learn' ? 'active' : ''}>Learn</a>
+      <a href="/cohort" class={activeNav === 'cohort' ? 'active' : ''}>Cohort</a>
+      <a href="/facilitate" class={activeNav === 'facilitate' ? 'active' : ''}>Facilitate</a>
+    </nav>
+    <a href="/cohort" class="cta-primary">Join the cohort</a>
+  </header>
+
+  <slot />
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h5>Camp Claude</h5>
+        <p class="disclaimer">A program of <a href="https://learnrudi.com">RUDI</a> — Responsible Use of Digital Intelligence. Training for professionals who want Claude as a real coworker, not just a chatbot.</p>
+        <p class="disclaimer disclaimer-spaced">Camp Claude is a RUDI program. Not affiliated with or endorsed by Anthropic.</p>
+        <p class="colophon">© 2026 RUDI LLC</p>
+      </div>
+      <div>
+        <h5>Learn</h5>
+        <a href="/learn">All articles</a>
+        <a href="/learn/chat-vs-cowork-vs-code">Chat vs Cowork vs Code</a>
+        <a href="/learn/automation-equation">Automation Equation</a>
+        <a href="/learn/connector-governance-pattern">Governance Pattern</a>
+      </div>
+      <div>
+        <h5>Program</h5>
+        <a href="/cohort">Foundations cohort</a>
+        <a href="/cohort/full">Full Camp Claude</a>
+        <a href="/cohort/corporate">Corporate &amp; regulated</a>
+        <a href="/facilitate">Facilitator pathway</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="/privacy">Privacy policy</a>
+        <a href="/terms">Terms of service</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  /* ── Top nav ─────────────────────────────── */
+  .topnav {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--paper);
+  }
+  .brand { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; color: var(--ink); font-style: italic; }
+  .brand a { color: inherit; text-decoration: none; }
+  .brand .dot { color: var(--rust); font-style: normal; }
+  .topnav nav { display: flex; gap: 32px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; }
+  .topnav nav a { color: var(--muted); text-decoration: none; }
+  .topnav nav a:hover { color: var(--rust); }
+  .topnav nav a.active { color: var(--ink); }
+  .cta-primary { display: inline-block; background: var(--ink); color: var(--paper); padding: 12px 22px; border-radius: 2px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: background 0.15s; }
+  .cta-primary:hover { background: var(--rust); color: var(--paper); text-decoration: none; }
+
+  /* ── Footer ──────────────────────────────── */
+  .site-footer { border-top: 1px solid var(--line); padding: 48px; background: var(--paper-soft); }
+  .site-footer .footer-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+  .site-footer h5 { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin: 0 0 16px; font-weight: 500; }
+  .site-footer a { display: block; color: var(--ink-soft); font-size: 14px; padding: 4px 0; text-decoration: none; }
+  .site-footer a:hover { color: var(--rust); }
+  .site-footer .disclaimer { font-size: 12px; color: var(--muted); line-height: 1.5; max-width: 48ch; margin: 0; }
+  .site-footer .disclaimer-spaced { margin-top: 14px; }
+  .site-footer .colophon { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); margin-top: 12px; }
+
+  @media (max-width: 960px) {
+    .topnav { padding: 16px 24px; flex-wrap: wrap; gap: 12px; }
+    .topnav nav { gap: 16px; font-size: 10px; }
+    .site-footer .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>

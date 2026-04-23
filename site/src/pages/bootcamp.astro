@@ -1,0 +1,594 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const STRIPE_LINK_GA = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_97';
+const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
+---
+
+<BaseLayout
+  title="The Camp Claude Bootcamp — $97"
+  description="Three live sessions. Build one automation that runs without you. Next cohort starts June 3."
+  activeNav="none"
+>
+
+  <!-- 1. Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Camp Claude · Bootcamp · Round 1</div>
+      <h1>What Does Your Week Look Like When <em>Claude Has Already Triaged Your Inbox</em> Before 8 AM?</h1>
+      <p class="dek">In three live sessions, I'll show you exactly how I use Claude to run parts of RUDI that used to eat fifteen hours a week. Walk away with one real automation running in your account — not a framework, not a diagram, actual work that keeps happening after the cohort ends.</p>
+      <div class="dates-pill">
+        Jun. 3, 4, 8  |  7:00 – 8:30 PM ET
+      </div>
+      <div class="hero-actions">
+        <a href={STRIPE_LINK_GA} class="cta-primary">Yes, I Want In — $97</a>
+        <a href="#pricing" class="cta-ghost">Or see the full VIP ticket →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Video testimonials -->
+  <section class="video-band">
+    <div class="inner">
+      <div class="video-band-intro">
+        <div class="section-eyebrow center">What students are saying</div>
+        <h2 class="video-band-h2">Hear it from <em>learners</em>.</h2>
+      </div>
+      <div class="video-grid">
+        <div class="video-card">
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/72dacIDUug8"
+            title="Camp Claude student testimonial"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/IXJ4GvMcKp4"
+            title="Camp Claude student testimonial"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-card">
+          <iframe
+            loading="lazy"
+            src="https://www.youtube.com/embed/AvmMbbF07co"
+            title="Camp Claude student testimonial"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Problem -->
+  <section class="strip">
+    <div class="inner narrow">
+      <h2 class="section-h2">The old way of working with AI is <em>exhausting</em>.</h2>
+      <p>Most professionals using AI right now are using it the way most people use a search engine. You have ChatGPT open in a tab. You ask it something. You copy the answer. You tweak it. You paste it into an email. You send.</p>
+      <p>That's not AI working for you. That's you using AI as a slightly faster copy-paste tool.</p>
+      <p>You know the feeling. It's Wednesday at 4 PM and you realize you forgot about the tool entirely for three days. You try a new prompt and it's marginally better than the last one, but the output still needs 20 minutes of your editing before it's useable. You close the tab and go back to doing the work yourself.</p>
+      <p>Then you read about someone building an AI agent that runs their entire business while they sleep and you think — <em>"what version of Claude are they using, because it's clearly not the one I have."</em></p>
+      <p>They're using the same Claude you are. They just opened the other two doors.</p>
+    </div>
+  </section>
+
+  <!-- 4. Vision -->
+  <section class="strip cream">
+    <div class="inner narrow">
+      <div class="section-eyebrow">The version you haven't seen</div>
+      <h2 class="section-h2">Claude can actually <em>touch your files</em>.</h2>
+      <p>The version of Claude that makes headlines doesn't live in a browser tab. It lives in a desktop app that reads the folders on your computer, writes to them, runs on a schedule, uses your Gmail, drafts replies in your voice, and sends you one clean document before 8 AM every morning.</p>
+      <p>That version has been available to you this entire time. You're already paying for it.</p>
+      <p>What stops most people isn't that Claude is complicated. It's that nobody showed them the second door. The one where Claude stops being a smart search box and starts being a coworker that ships work while you sleep.</p>
+      <p>That's what you'll build in three sessions.</p>
+    </div>
+  </section>
+
+  <!-- 5. Authority quote -->
+  <section class="strip ink">
+    <div class="inner">
+      <div class="section-eyebrow">A line worth remembering</div>
+      <blockquote class="pull-quote">
+        "There will be a 10-person team doing a billion in revenue within the next three to five years."
+        <cite>— Dan Martell</cite>
+      </blockquote>
+      <p class="pq-note">That team isn't using AI the way you are. The difference isn't their budget. It's which doors they've opened.</p>
+    </div>
+  </section>
+
+  <!-- 6. Old vs New table -->
+  <section class="strip">
+    <div class="inner">
+      <div class="section-eyebrow">Before and after</div>
+      <h2 class="section-h2">Two versions of the <em>same tool</em>.</h2>
+      <div class="vs-table">
+        <div class="vs-col old">
+          <h3>Chat-only Claude</h3>
+          <ul>
+            <li>A tab you open when you remember</li>
+            <li>You copy-paste everything yourself</li>
+            <li>You forget to use it half the time</li>
+            <li>You've never heard of Cowork or skills</li>
+            <li>You think AI is <em>"cool but limited"</em></li>
+            <li>You pay $20/month and use 3% of it</li>
+            <li>The best version lives on someone else's laptop</li>
+          </ul>
+        </div>
+        <div class="vs-col new">
+          <h3>Full Claude</h3>
+          <ul>
+            <li>A coworker at your desk, working on one project</li>
+            <li>Claude reads your inbox and drafts your replies</li>
+            <li>Claude runs on a schedule without you</li>
+            <li>You have three skills and one automation running</li>
+            <li>You delegate 5 hours a week back to your life</li>
+            <li>You pay $20/month and use every surface</li>
+            <li>The best version is in your account at 7 AM tomorrow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Origin story -->
+  <section class="strip cream">
+    <div class="inner narrow">
+      <div class="section-eyebrow">Why I built this</div>
+      <h2 class="section-h2">I've been inside the room where AI training <em>fails</em>.</h2>
+      <p>A few years ago I was running professional development at a county educational service center in Ohio. Hundreds of educators, serious curriculum, real budget. The AI sessions were the hardest to land.</p>
+      <p>Not because the teachers weren't smart. They were. It was because every AI workshop I saw — ours and everyone else's — stopped at <em>"here's what ChatGPT is."</em> The people left fluent in theory and went home to the same tab-based AI they'd been using before.</p>
+      <p>That bothered me enough that I started RUDI — Responsible Use of Digital Intelligence. We built a framework that got traction with state partners, NSF-linked programs, and corporate cohorts at Avanade. We ran programs for teachers, founders, and compliance teams at regulated firms.</p>
+      <p>But I kept hitting the same ceiling. Theory doesn't stick. You can show someone the map ten times, but until they drive it, they don't have it.</p>
+      <p>Camp Claude is the missing half — hands on, live, one real automation built and shipped by the end. Every cohort walks out with something running in their account, not a diagram on a slide.</p>
+      <p>The $97 Bootcamp is the entry point. Three sessions, ninety minutes each, one automation live by the end.</p>
+    </div>
+  </section>
+
+  <!-- 8. Mindset reframe -->
+  <section class="strip">
+    <div class="inner narrow reframe">
+      <div class="section-eyebrow">The reframe</div>
+      <h2 class="section-h2">Claude isn't the secret. <em>You</em> are.</h2>
+      <p>Most people think the breakthrough is finding the right prompt, the right tool, the right agent. So they rabbit-hole into tutorials and tool comparisons and come out with a longer to-do list and zero change in how their week actually runs.</p>
+      <p>The tool isn't the secret. The tool is the same one you're already using.</p>
+      <p>The professionals pulling ahead right now aren't using better AI than you. They changed how they think about their own work. They stopped asking <em>"what can I use Claude for today?"</em> and started asking <em>"what could Claude do for me every day forever if I set it up once?"</em></p>
+      <p>That single mental move is what the Bootcamp is here to install.</p>
+    </div>
+  </section>
+
+  <!-- 9. Day-by-day sessions -->
+  <section class="strip cream">
+    <div class="inner">
+      <div class="section-eyebrow">The three sessions</div>
+      <h2 class="section-h2">Three nights. One automation. <em>Yours.</em></h2>
+
+      <div class="session">
+        <div class="session-meta">
+          <div class="session-num">Session 01</div>
+          <div class="session-date">Wednesday, Jun 3</div>
+          <div class="session-time">7:00 – 8:30 PM ET</div>
+          <div class="session-duration">90 min</div>
+        </div>
+        <div class="session-body">
+          <h3>SEE CLAUDE WORKING ON REAL FILES — <em>YOURS ARE NEXT</em></h3>
+          <p>In session one I'm sharing my screen and walking you through the three doors most ChatGPT users never open. You'll see Chat (the one you know), Cowork (the one you don't), and Code (the one you don't need) — and exactly when to reach for each.</p>
+          <p>You'll watch Claude read my actual inbox, draft replies in my voice, pull files from a Google Drive folder, and send me one clean document before 8 AM every morning. You'll see the real skill file that makes it work, the real folder it lives in, and the real 23 minutes it saves me every weekday.</p>
+          <p>After day one you'll stop seeing Claude as <em>"a smarter ChatGPT"</em> and start seeing it as the first AI that can actually touch the work on your computer.</p>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-meta">
+          <div class="session-num">Session 02</div>
+          <div class="session-date">Thursday, Jun 4</div>
+          <div class="session-time">7:00 – 8:30 PM ET</div>
+          <div class="session-duration">90 min</div>
+        </div>
+        <div class="session-body">
+          <h3>WRITE THE ONE INSTRUCTION FILE THAT <em>MAKES CLAUDE YOURS</em></h3>
+          <p>In session two you'll build the single thing that separates <em>"using Claude"</em> from <em>"working with Claude"</em> — your first skill. It's a short markdown file that tells Claude how you want it to work, what you care about, and what to ignore. Most people never learn these exist.</p>
+          <p>We'll write yours together. I'll show you mine live. You'll install one connector too (Gmail or Calendar — your pick), watch Claude reach into your actual tools for the first time, and feel the exact moment it stops being a smart assistant and becomes a specific-to-you team member.</p>
+          <p>By the end of session two you have one skill and one connector live on your account. That's the architecture. Day three is where it becomes an automation that runs without you.</p>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-meta">
+          <div class="session-num">Session 03</div>
+          <div class="session-date">Monday, Jun 8</div>
+          <div class="session-time">7:00 – 8:30 PM ET</div>
+          <div class="session-duration">90 min</div>
+        </div>
+        <div class="session-body">
+          <h3>SHIP ONE AUTOMATION <em>RUNNING WITHOUT YOU</em> TOMORROW MORNING</h3>
+          <p>In session three, we ship.</p>
+          <p>You'll combine what you built on day two — your skill, your connector — with a scheduled task. The result is the move that turns <em>"I use AI"</em> into <em>"AI works for me."</em> One automation, running on a schedule, producing work you'll use before you sit down at your computer.</p>
+          <p>We'll build the same automation I use every weekday. You'll customize it to your inbox, your VIP senders, your tone. You'll schedule it to run tomorrow morning. And when you wake up, it will have done its first run. Without you. That's the moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Everything you get (value stack) -->
+  <section class="strip">
+    <div class="inner">
+      <div class="section-eyebrow">What you get</div>
+      <h2 class="section-h2">Here's everything included <em>at $97</em>.</h2>
+
+      <div class="stack">
+        <div class="stack-item"><span class="stack-what">3 × 90-minute live sessions</span><span class="stack-val">$497 value</span></div>
+        <div class="stack-item"><span class="stack-what">Kick-off call to get your setup right before Session 1</span><span class="stack-val">$97 value</span></div>
+        <div class="stack-item"><span class="stack-what">30-day replay access to all session recordings</span><span class="stack-val">$147 value</span></div>
+        <div class="stack-item"><span class="stack-what">Private cohort community on Circle (30 days)</span><span class="stack-val">$197 value</span></div>
+        <div class="stack-item"><span class="stack-what">The Camp Claude workbook — 7 articles as a printable PDF</span><span class="stack-val">$97 value</span></div>
+        <div class="stack-item"><span class="stack-what">10 ready-to-use skill templates (<code>CLAUDE.md</code> files)</span><span class="stack-val">$297 value</span></div>
+        <div class="stack-item"><span class="stack-what">The Three-Doors decision card (printable reference)</span><span class="stack-val">$47 value</span></div>
+        <div class="stack-item"><span class="stack-what">Hot-seat session — I build one skill live with volunteers</span><span class="stack-val">$297 value</span></div>
+        <div class="stack-item featured"><span class="stack-what"><strong>One completed automation running in your account by end of Session 3</strong></span><span class="stack-val">$497 value</span></div>
+        <div class="stack-total">
+          <span>Total value</span><span>$2,173</span>
+        </div>
+        <div class="stack-price">
+          <span>You pay</span><span>$97</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Tiered pricing -->
+  <section class="strip cream" id="pricing">
+    <div class="inner">
+      <div class="section-eyebrow">Pick your ticket</div>
+      <h2 class="section-h2">Two tiers. <em>Same core product.</em></h2>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="tier-label">General Admission</div>
+          <div class="tier-price"><span class="currency">$</span>97</div>
+          <ul>
+            <li>3 × 90-minute live sessions</li>
+            <li>Kick-off call</li>
+            <li>30-day replay access</li>
+            <li>Private cohort community (30 days)</li>
+            <li>The Camp Claude workbook (PDF)</li>
+            <li>10 skill templates</li>
+            <li>Three-Doors decision card</li>
+            <li>Hot-seat session</li>
+            <li>One automation running by Session 3</li>
+          </ul>
+          <a href={STRIPE_LINK_GA} class="tier-cta">Join — $97</a>
+        </div>
+
+        <div class="tier featured">
+          <div class="tier-label">VIP · Recommended</div>
+          <div class="tier-price"><span class="currency">$</span>297</div>
+          <ul class="more">
+            <li><strong>Everything in General Admission, PLUS:</strong></li>
+            <li>1:1 setup call with Brandon (30 min)</li>
+            <li>6-month replay access (vs. 30-day)</li>
+            <li>Bonus session: <em>"Corporate Security Module preview"</em> — the governance pattern for regulated firms</li>
+            <li>Priority Q&amp;A channel during cohort</li>
+            <li>50% off any future Camp Claude cohort (Foundations or Full)</li>
+            <li>Industry-specific skill templates (pick your stack)</li>
+          </ul>
+          <a href={STRIPE_LINK_VIP} class="tier-cta">Go VIP — $297</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Guarantee -->
+  <section class="strip">
+    <div class="inner guarantee-block">
+      <div class="section-eyebrow">Love it or leave it</div>
+      <div class="guarantee-inner">
+        <div class="guarantee-badge">100% Money-Back</div>
+        <div class="guarantee-body">
+          <h2>If Session 1 doesn't floor you, <em>full refund</em>.</h2>
+          <p>Show up live for Session 1 on June 3. Do the setup work with us. If you don't feel like you already got more than $97 of value by the end of that first night, email us at <a href="mailto:support@campclaude.ai">support@campclaude.ai</a> by 11:59 PM PT on June 3 and we'll refund you. No forms, no friction.</p>
+          <p>This decision should feel like the easiest yes you've made this quarter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Who it's for -->
+  <section class="strip cream">
+    <div class="inner narrow">
+      <div class="section-eyebrow">Who this is for</div>
+      <h2 class="section-h2">Built for <em>professionals</em>, not beginners or engineers.</h2>
+      <p>You've used ChatGPT, Claude, Gemini, or Copilot for at least six months. You know how to prompt. You're not looking for <em>"what is an LLM"</em> — you're looking for <em>"how do people actually make AI do their work?"</em></p>
+      <p>This is built for you if:</p>
+      <ul class="for-list">
+        <li>You run a business, consult, lead a team, or run an independent practice</li>
+        <li>You have work that eats your best hours and you know AI could help, but you can't figure out how to actually wire it in</li>
+        <li>You've watched AI demos that blew your mind but couldn't replicate them on Tuesday</li>
+        <li>You want an automation running in your account by the end, not just notes</li>
+      </ul>
+      <p>This is <strong>not</strong> for you if:</p>
+      <ul class="not-for-list">
+        <li>You've never used a conversational AI tool before</li>
+        <li>You're a software engineer looking for Claude Code training (wait for our advanced track)</li>
+        <li>You want a library of 100 hours of pre-recorded video (this is live; it's the opposite of that)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 14. FAQ -->
+  <section class="strip">
+    <div class="inner narrow">
+      <div class="section-eyebrow">A few things people ask</div>
+      <h2 class="section-h2">Honest answers to what <em>you're about to ask</em>.</h2>
+
+      <div class="faq">
+        <details class="faq-item">
+          <summary>
+            <span>Do I need to know how to code?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>No. The Bootcamp is designed for non-technical professionals. If you can drag a folder to your desktop and type a sentence, you have the skills. Every click happens together on screen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Do I need a paid Claude subscription?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>You'll want Claude Pro ($20/mo) or higher before Session 1. The free tier doesn't include Cowork, which is the heart of the bootcamp. Teams and Enterprise are both fine.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>What if I can't attend live?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>Every session is recorded and posted in the community within 24 hours. You can watch on your schedule and bring questions to the next live session. Replays are yours for 30 days (GA) or 6 months (VIP).</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>What kind of automation will I build?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>Whatever's most useful to you. The canonical demo is morning inbox triage — but if you'd rather build a weekly status digest, a post-meeting drafter, a content-from-notes pipeline, or something specific to your work, we'll help you customize it. You leave with <em>your</em> automation, not mine.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>I already use Claude Pro regularly. Is this still for me?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>Especially for you. The people who already use Claude the most have the biggest gap between what they're doing and what the tool can do. The bootcamp closes that gap.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>How is this different from Foundations or the full cohort?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>The Bootcamp is a three-session intensive with one automation as the outcome. Foundations is a four-session cohort with deeper coverage of the same material plus model selection and supervision. Full Camp Claude is a five-session, eight-week program with multiple automations and 1:1 coaching. Most people start at the Bootcamp. Some graduate into the others.</p>
+        </details>
+        <details class="faq-item">
+          <summary>
+            <span>Is there a corporate version?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <p>Yes. Private company cohorts start at $15K. Regulated-industry cohorts (finance, legal, healthcare) add the Corporate Security Module and start at $75K. If that's you, reach out at <a href="/cohort/corporate">/cohort/corporate</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Final CTA -->
+  <section class="strip ink">
+    <div class="inner final-cta">
+      <div class="section-eyebrow center">Next cohort</div>
+      <h2 class="final-h2">June 3, 4, 8.<br/><em>Thirty seats.</em></h2>
+      <p>Three live sessions. One automation running by the end. Full refund through Session 1 if it's not floor-you good.</p>
+      <div class="final-actions">
+        <a href={STRIPE_LINK_GA} class="big-btn">Yes, I Want In — $97</a>
+        <a href={STRIPE_LINK_VIP} class="ghost-btn">Or go VIP — $297 →</a>
+      </div>
+      <p class="tiny">Secure checkout · Stripe · 100% refund through Session 1</p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Typography base */
+  p { max-width: 64ch; margin: 0 0 1.1em; }
+
+  /* 1. Hero */
+  .hero { padding: 80px 48px 64px; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 80px; line-height: 0.98; letter-spacing: -0.025em; margin: 0 0 28px; text-wrap: balance; color: var(--ink); max-width: 20ch; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .dek { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.35; color: var(--ink-soft); margin: 0 0 28px; max-width: 58ch; }
+  .dates-pill { display: inline-block; background: var(--sage); color: var(--paper); padding: 12px 24px; border-radius: 4px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; margin-bottom: 32px; }
+  .hero-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .cta-primary { display: inline-block; background: var(--ink); color: var(--paper); padding: 18px 32px; border-radius: 2px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: background 0.15s; }
+  .cta-primary:hover { background: var(--rust); color: var(--paper); text-decoration: none; }
+  .cta-ghost { display: inline-block; padding: 12px 0; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rust); border-bottom: 1px solid var(--rust); text-decoration: none; }
+
+  /* 2. Video testimonials */
+  .video-band { background: var(--paper-soft); padding: 64px 48px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .video-band .inner { max-width: 1280px; margin: 0 auto; }
+  .video-band-intro { text-align: center; margin-bottom: 40px; }
+  .video-band-h2 { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; margin: 0; text-wrap: balance; color: var(--ink); }
+  .video-band-h2 em { color: var(--rust); font-style: italic; }
+  .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .video-card { position: relative; aspect-ratio: 16/9; background: var(--ink); border-radius: 4px; overflow: hidden; border: 1px solid var(--line); }
+  .video-card iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  /* Section scaffolding */
+  .strip { padding: 80px 48px; border-top: 1px solid var(--line); }
+  .strip .inner { max-width: 1280px; margin: 0 auto; }
+  .strip .inner.narrow { max-width: 860px; }
+  .strip.ink { background: var(--ink); color: var(--paper); border-top: none; }
+  .strip.cream { background: var(--cream); }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 18px; }
+  .section-eyebrow.center { text-align: center; }
+  .strip.ink .section-eyebrow { color: var(--rust-soft); }
+  .section-h2 { font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 32px; text-wrap: balance; }
+  .section-h2 em { color: var(--rust); font-style: italic; }
+
+  /* 3 & 4 — problem/vision body */
+  .strip p { font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 58ch; }
+  .strip p em { color: var(--ink); font-style: italic; }
+  .strip p strong { color: var(--ink); font-weight: 500; }
+
+  /* 5. Authority quote */
+  .pull-quote { font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1.2; letter-spacing: -0.01em; color: var(--paper); margin: 0 0 24px; max-width: 800px; }
+  .pull-quote cite { display: block; margin-top: 20px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust-soft); font-style: normal; }
+  .pq-note { color: rgba(244,238,227,0.72); font-size: 16px; max-width: 58ch; }
+
+  /* 6. Vs table */
+  .vs-table { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); border: 1px solid var(--line); margin-top: 24px; }
+  .vs-col { padding: 36px 32px; background: var(--paper); }
+  .vs-col.new { background: var(--cream); }
+  .vs-col h3 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; font-weight: 500; }
+  .vs-col.new h3 { color: var(--rust); }
+  .vs-col ul { list-style: none; padding: 0; margin: 0; }
+  .vs-col li { padding: 14px 0; font-size: 15px; line-height: 1.45; border-top: 1px solid var(--line-soft); color: var(--ink-soft); }
+  .vs-col li:first-child { border-top: none; padding-top: 0; }
+  .vs-col.new li { color: var(--ink); }
+  .vs-col.new li em { color: var(--rust); font-style: italic; }
+
+  /* 8. Mindset reframe */
+  .reframe { text-align: left; }
+  .reframe .section-h2 { font-size: 56px; }
+
+  /* 9. Sessions */
+  .session { display: grid; grid-template-columns: 220px 1fr; gap: 48px; padding: 40px 0; border-top: 1px solid var(--line); align-items: start; }
+  .session:last-child { border-bottom: 1px solid var(--line); }
+  .session-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; color: var(--ink-soft); }
+  .session-num { color: var(--rust); font-weight: 500; text-transform: uppercase; letter-spacing: 0.22em; margin-bottom: 14px; }
+  .session-date, .session-time, .session-duration { margin-bottom: 6px; }
+  .session-body h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 18px; text-wrap: balance; }
+  .session-body h3 em { color: var(--rust); font-style: italic; }
+  .session-body p { font-size: 16px; line-height: 1.55; }
+
+  /* 10. Value stack */
+  .stack { max-width: 880px; margin: 0 auto; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .stack-item { display: grid; grid-template-columns: 1fr 140px; padding: 16px 28px; border-bottom: 1px solid var(--line-soft); font-size: 15px; color: var(--ink); align-items: center; }
+  .stack-item.featured { background: var(--cream); }
+  .stack-what { padding-right: 16px; }
+  .stack-what code { font-family: var(--mono); background: var(--cream); padding: 2px 6px; border-radius: 2px; font-size: 13px; }
+  .stack-val { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.1em; text-align: right; }
+  .stack-total { display: grid; grid-template-columns: 1fr 140px; padding: 20px 28px; background: var(--paper-soft); font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink); border-top: 1px solid var(--line); }
+  .stack-total span:last-child { text-align: right; color: var(--muted); }
+  .stack-price { display: grid; grid-template-columns: 1fr 140px; padding: 24px 28px; background: var(--ink); color: var(--paper); font-family: var(--serif); font-style: italic; font-size: 32px; align-items: baseline; }
+  .stack-price span:last-child { text-align: right; color: var(--rust-soft); font-size: 52px; }
+
+  /* 11. Tiers */
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+  .tier { background: var(--paper); padding: 44px 36px; border: 1px solid var(--line); border-radius: 3px; display: flex; flex-direction: column; }
+  .tier.featured { background: var(--ink); color: var(--paper); border: none; }
+  .tier-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
+  .tier.featured .tier-label { color: var(--rust-soft); }
+  .tier-price { font-family: var(--serif); font-size: 88px; line-height: 1; letter-spacing: -0.03em; font-style: italic; margin: 0 0 28px; }
+  .tier-price .currency { font-size: 36px; vertical-align: super; color: var(--rust); margin-right: 6px; }
+  .tier.featured .tier-price .currency { color: var(--rust-soft); }
+  .tier ul { list-style: none; padding: 0; margin: 0 0 28px; }
+  .tier li { padding: 10px 0; font-size: 14px; line-height: 1.45; border-top: 1px solid var(--line-soft); display: flex; gap: 12px; }
+  .tier.featured li { border-top-color: rgba(244,238,227,0.12); }
+  .tier li::before { content: "+"; color: var(--sage); font-family: var(--mono); font-size: 14px; flex-shrink: 0; }
+  .tier.featured li::before { color: var(--rust-soft); }
+  .tier li strong { color: inherit; font-weight: 500; }
+  .tier .tier-cta { display: block; text-align: center; background: var(--ink); color: var(--paper); padding: 16px 22px; border-radius: 2px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; text-decoration: none; margin-top: auto; }
+  .tier.featured .tier-cta { background: var(--paper); color: var(--ink); }
+  .tier .tier-cta:hover { background: var(--rust); color: var(--paper); text-decoration: none; }
+  .tier.featured .tier-cta:hover { background: var(--rust-soft); color: var(--ink); }
+
+  /* 12. Guarantee */
+  .guarantee-block { text-align: center; }
+  .guarantee-inner { display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: start; text-align: left; max-width: 960px; margin: 32px auto 0; }
+  .guarantee-badge { background: var(--sage); color: var(--paper); padding: 32px 20px; border-radius: 50%; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.3; }
+  .guarantee-body h2 { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 16px; text-wrap: balance; }
+  .guarantee-body h2 em { color: var(--rust); font-style: italic; }
+
+  /* 13. Who it's for */
+  .for-list, .not-for-list { list-style: none; padding: 0; margin: 0 0 24px; max-width: 64ch; }
+  .for-list li, .not-for-list li { padding: 12px 0; border-top: 1px solid var(--line-soft); font-size: 16px; color: var(--ink-soft); display: flex; gap: 12px; }
+  .for-list li:first-child, .not-for-list li:first-child { border-top: 1px solid var(--line); }
+  .for-list li::before { content: "+"; color: var(--sage); font-family: var(--mono); flex-shrink: 0; }
+  .not-for-list li::before { content: "−"; color: var(--rust); font-family: var(--mono); flex-shrink: 0; }
+
+  /* 14. FAQ — accordion */
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-item summary {
+    list-style: none;
+    padding: 24px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    transition: color 0.15s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { color: var(--rust); }
+  .faq-item .faq-icon {
+    font-family: var(--mono);
+    font-size: 28px;
+    line-height: 1;
+    color: var(--rust);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .faq-item[open] .faq-icon { transform: rotate(45deg); }
+  .faq-item p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+    padding-right: 48px;
+  }
+  .faq-item p em { color: var(--ink); font-style: italic; }
+
+  /* 15. Final CTA */
+  .final-cta { text-align: center; }
+  .final-h2 { font-family: var(--serif); font-weight: 400; font-size: 72px; line-height: 1.02; letter-spacing: -0.02em; color: var(--paper); margin: 16px 0 24px; font-style: italic; text-wrap: balance; }
+  .final-h2 em { color: var(--rust-soft); font-style: italic; }
+  .final-cta p { color: rgba(244,238,227,0.72); max-width: 58ch; margin: 0 auto 32px; font-size: 18px; }
+  .final-actions { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; }
+  .big-btn { display: inline-block; background: var(--paper); color: var(--ink); padding: 20px 36px; border-radius: 2px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; font-weight: 500; }
+  .big-btn:hover { background: var(--rust-soft); color: var(--ink); text-decoration: none; }
+  .ghost-btn { color: var(--rust-soft); font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 20px 0; border-bottom: 1px solid var(--rust-soft); }
+  .tiny { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: rgba(244,238,227,0.4); }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .hero { padding: 40px 24px; }
+    h1 { font-size: 44px; }
+    .dek { font-size: 20px; }
+    .video-band { padding: 40px 24px; }
+    .video-band-h2 { font-size: 30px; }
+    .video-grid { grid-template-columns: 1fr; gap: 16px; }
+    .section-h2 { font-size: 32px; }
+    .reframe .section-h2 { font-size: 36px; }
+    .pull-quote { font-size: 28px; }
+    .vs-table { grid-template-columns: 1fr; }
+    .session { grid-template-columns: 1fr; gap: 16px; }
+    .tiers { grid-template-columns: 1fr; }
+    .guarantee-inner { grid-template-columns: 1fr; gap: 24px; }
+    .guarantee-badge { margin: 0 auto; }
+    .final-h2 { font-size: 42px; }
+    .stack-total, .stack-price { grid-template-columns: 1fr 100px; }
+    .stack-price span:last-child { font-size: 36px; }
+    .strip { padding: 48px 24px; }
+  }
+</style>

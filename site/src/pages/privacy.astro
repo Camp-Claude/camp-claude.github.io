@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Privacy policy" description="How Camp Claude collects, uses, and protects your information.">
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a><span class="sep">/</span>
+      <span>Privacy</span>
+    </div>
+
+    <h1>Privacy policy</h1>
+    <div class="updated">Last updated · April 23, 2026</div>
+
+    <p class="intro">Short version: we collect the minimum we need to run the program, we don't sell anything, and you can ask us to delete your data at any time. The longer version is below, in plain language.</p>
+
+    <h2>Who we are</h2>
+    <p>Camp Claude is a program of <strong>RUDI LLC</strong>, operating in the United States. We are not affiliated with or endorsed by Anthropic.</p>
+
+    <h2>What we collect</h2>
+    <p>When you enroll in a cohort: name, email, billing via Stripe (we don't see card numbers), intake info, attendance. When you subscribe to the newsletter: email plus engagement signals. When you apply to facilitate or request a corporate proposal: your form answers. When you visit the site: standard web logs and privacy-preserving analytics (no tracking cookies, no behavioral profiles).</p>
+
+    <h2>What we <em>don't</em> collect</h2>
+    <p>We do not buy data from third-party brokers. We do not track you across the web with cookies. We do not build or sell behavioral profiles. We do not record your Claude usage — your conversations with Claude are between you and Anthropic.</p>
+
+    <h2>How we use your information</h2>
+    <p>To deliver the cohort you paid for, process payments through Stripe, send program communications and newsletter emails if you subscribed, respond to inquiries, and improve the curriculum based on aggregate patterns. Nothing more.</p>
+
+    <h2>How we share information</h2>
+    <p>We share data only with providers that help us run the program: Stripe (payments), Circle or Skool (community), ConvertKit or Beehiiv (email), Zoom or Google Meet (live sessions), Vercel (hosting). Each has their own privacy policy. We do not sell your data.</p>
+
+    <h2>How long we keep your data</h2>
+    <p>Enrollment records: seven years for tax and business records. Newsletter subscription: until you unsubscribe. Inquiry forms: 18 months unless you become a customer. Web analytics: aggregate-only, rolling 13 months.</p>
+
+    <h2>Your rights</h2>
+    <p>You can always access, correct, delete, or export your information, unsubscribe with one click, and withdraw consent for specific uses. Email us to exercise these rights — we'll respond within 30 days.</p>
+
+    <h2>Cookies</h2>
+    <p>Essential cookies only — for enrollment and community login. No tracking cookies. No advertising cookies.</p>
+
+    <h2>For EU, UK, and California residents</h2>
+    <p>We process data under the legal bases of contract (cohort enrollment), consent (newsletter, forms), and legitimate interest (aggregate analytics). California residents have the rights to know, delete, correct, and opt out of sale/sharing under CCPA/CPRA — and we do not sell or share personal information for advertising.</p>
+
+    <h2>Children</h2>
+    <p>Camp Claude is built for professionals. We do not knowingly collect information from anyone under 16.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>When we make material changes, we'll update the date above and, for enrolled cohort members, email directly.</p>
+
+    <div class="contact-box">
+      <h3>Questions about your data?</h3>
+      <p>Email <a href="mailto:privacy@campclaude.ai">privacy@campclaude.ai</a>, or write to RUDI LLC. We'll respond within 30 days — usually much faster.</p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main { max-width: 780px; margin: 0 auto; padding: 72px 48px 96px; }
+  .breadcrumb { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--rust); }
+  .breadcrumb .sep { margin: 0 10px; opacity: 0.5; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 0.98; letter-spacing: -0.02em; margin: 0 0 16px; }
+  .updated { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+  .intro { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.4; color: var(--ink-soft); margin: 0 0 40px; max-width: 56ch; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -0.015em; margin: 40px 0 16px; }
+  h2 em { color: var(--rust); font-style: italic; }
+  h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.2; margin: 28px 0 10px; }
+  p { margin: 0 0 1em; max-width: 64ch; color: var(--ink-soft); }
+  p strong { color: var(--ink); font-weight: 500; }
+  .contact-box { background: var(--cream); border-left: 3px solid var(--rust); padding: 24px 28px; margin: 32px 0; }
+  .contact-box h3 { margin-top: 0; }
+  .contact-box p { margin-bottom: 0; }
+  @media (max-width: 760px) { main { padding: 48px 24px; } h1 { font-size: 40px; } h2 { font-size: 26px; } .intro { font-size: 18px; } }
+</style>

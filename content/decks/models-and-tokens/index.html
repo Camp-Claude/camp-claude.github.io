@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Claude · Models, Tokens &amp; the Weekly Limit</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #000; }
+  body { font-family: "Inter Tight", system-ui, sans-serif; }
+  em { font-style: italic; }
+</style>
+
+<script type="application/json" id="speaker-notes">
+[
+  "Welcome. This session is about three choices — Haiku, Sonnet, Opus — and the plumbing underneath them. 30 minutes plus Q&A.",
+  "Frame the problem. Most people arrive from ChatGPT where the model is picked for you. Claude hands that choice back. Getting it right matters.",
+  "The whole session compressed into one sentence. Read it aloud slowly. If they leave with just this, the session worked.",
+  "Section marker. We'll spend ~5 minutes on the three models themselves.",
+  "The car metaphor. It's the spine of the session — we'll come back to bike / sedan / truck throughout.",
+  "Haiku. Fast, cheap, light. Not for anything ambiguous. 'Five-minute intern task' is the test.",
+  "Sonnet. The daily driver. Default to this. 80% of the time it's right.",
+  "Opus. The heavyweight. Strong at nuance and architecture. Don't burn it on trivia.",
+  "Reference table. Good slide to pause on and take questions about trade-offs.",
+  "Section marker. Tokens — the unit of cost.",
+  "Define token: roughly three-quarters of a word. Four characters. Show the table.",
+  "Both sides count. Input AND output. Output is often the surprise — long artifacts cost real tokens.",
+  "Section marker. Context — this is the heart of the session. Slow down here.",
+  "What context actually holds. It's not just your prompt — attachments, project files, connectors, the whole chat history.",
+  "200,000 tokens and up. Novel-length. Sounds unlimited. It isn't.",
+  "The hidden mechanic. Every turn re-sends the whole chat. This is the key insight of the session.",
+  "Visual: turn 1, turn 15, turn 30. Same chat, dramatically different cost. The bars should land the point.",
+  "A 30-turn Opus chat: 50 to 100 times a fresh Opus chat. Let that number sit.",
+  "So — if a chat feels slow, start a new one. That's the actionable takeaway from this section.",
+  "Section marker. Usage — how the budget actually works.",
+  "Two counters: weekly ceiling, session rolling window. Explain both.",
+  "Three levers: model, context, output length. Every bill is some mix of these.",
+  "The Usage tab. Show where to look in the app. Explain what each counter means.",
+  "Section marker. The decision rule — the takeaway framework.",
+  "Two questions. Hardness and frequency. That's the whole rule.",
+  "Worked examples. Walk through each row. Note the daily-run drops it one tier.",
+  "Seven habits. Don't read every line — call out 1, 2, and 6 as the biggest wins.",
+  "Section marker. Closing.",
+  "Decision rule recap. This is the one slide I want them to screenshot.",
+  "Three small moves for the week. Set an expectation that we'll check back next session.",
+  "The landmark phrases. Say these often — we want the language to stick.",
+  "Questions. Open it up."
+]
+</script>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+  <section data-label="Title"             id="s01"></section>
+  <section data-label="Why This Matters"   id="s02"></section>
+  <section data-label="One Sentence"       id="s03"></section>
+  <section data-label="Part I · Three Models" id="s04"></section>
+  <section data-label="Three Engines"      id="s05"></section>
+  <section data-label="Haiku"              id="s06"></section>
+  <section data-label="Sonnet"             id="s07"></section>
+  <section data-label="Opus"               id="s08"></section>
+  <section data-label="At a Glance"        id="s09"></section>
+  <section data-label="Part II · Tokens"   id="s10"></section>
+  <section data-label="Token Definition"   id="s11"></section>
+  <section data-label="Both Sides Count"   id="s12"></section>
+  <section data-label="Part III · Context" id="s13"></section>
+  <section data-label="Context Contents"   id="s14"></section>
+  <section data-label="Window Size"        id="s15"></section>
+  <section data-label="Hidden Mechanic"    id="s16"></section>
+  <section data-label="Turn Comparison"    id="s17"></section>
+  <section data-label="30-Turn Opus"       id="s18"></section>
+  <section data-label="Slowdown Signal"    id="s19"></section>
+  <section data-label="Part IV · Usage"    id="s20"></section>
+  <section data-label="Weekly Budget"      id="s21"></section>
+  <section data-label="Cost Drivers"       id="s22"></section>
+  <section data-label="Usage Tab"          id="s23"></section>
+  <section data-label="Part V · Decision Rule" id="s24"></section>
+  <section data-label="Two Questions"      id="s25"></section>
+  <section data-label="Worked Examples"    id="s26"></section>
+  <section data-label="Seven Habits"       id="s27"></section>
+  <section data-label="Part VI · Closing"  id="s28"></section>
+  <section data-label="Decision Recap"     id="s29"></section>
+  <section data-label="Try This Week"      id="s30"></section>
+  <section data-label="Landmark Language"  id="s31"></section>
+  <section data-label="Questions"          id="s32"></section>
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="components2.jsx"></script>
+<script type="text/babel" src="components3.jsx"></script>
+
+<script type="text/babel">
+  const TOTAL = 32;
+
+  // Map slide element id -> React component factory.
+  const slides = [
+    ['s01', () => <TitleSlide />],
+    ['s02', () => <WhyMatters page={2} total={TOTAL} />],
+    ['s03', () => <OneSentence page={3} total={TOTAL} />],
+    ['s04', () => <SectionDivider number="I"  label="The three models" title={<>Same brand.<br/>Different engines.</>} page={4} total={TOTAL} />],
+    ['s05', () => <ThreeEngines page={5} total={TOTAL} />],
+    ['s06', () => <ModelProfile page={6} total={TOTAL}
+      name="Haiku" tag="The fast, cheap one · the bike" vehicle="bike"
+      bestFor={[
+        'Quick summaries, short rewrites, one-line questions',
+        'High-volume automation — scheduled tasks that run every morning',
+        'Classification and sorting ("is this email urgent?")',
+        'Anything where you want speed over depth',
+      ]}
+      notFor={[
+        'Hard reasoning or genuinely ambiguous problems',
+        'Long, nuanced writing',
+        'Multi-step agentic work with edge cases',
+      ]}
+      rule={<>If you&rsquo;d ask an intern to do it in under five minutes, use Haiku.</>} />],
+    ['s07', () => <ModelProfile page={7} total={TOTAL}
+      name="Sonnet" tag="The balanced default · the sedan" vehicle="sedan"
+      bestFor={[
+        'Most daily work — drafting emails, writing docs, iterating on ideas',
+        'Moderate reasoning — comparing options, debugging small problems',
+        'Coding tasks that aren\u2019t architectural',
+        'The conversations you\u2019d have with a smart colleague',
+      ]}
+      notFor={[
+        'Genuinely hard problems that need extra horsepower',
+        'Bulk routine tasks where you\u2019re wasting the engine — use Haiku',
+      ]}
+      rule={<>When in doubt, use Sonnet. It&rsquo;s the right answer about 80% of the time.</>} />],
+    ['s08', () => <ModelProfile page={8} total={TOTAL}
+      name="Opus" tag="The heavyweight · the moving truck" vehicle="truck"
+      bestFor={[
+        'Hard reasoning — strategic thinking, complex planning',
+        'Ambiguous problems where judgment matters',
+        'Architectural or design decisions',
+        'Long-form creative writing with real nuance',
+        'Code that spans multiple files and needs real thought',
+      ]}
+      notFor={[
+        'Simple tasks — you\u2019re burning usage for nothing',
+        'Routine drafts — Sonnet is fine',
+        'High-volume automation — Haiku or Sonnet',
+      ]}
+      rule={<>Opus is a big-engine car. You don&rsquo;t drive it to the corner store.</>} />],
+    ['s09', () => <AtAGlance page={9} total={TOTAL} />],
+    ['s10', () => <SectionDivider number="II" label="Tokens" title={<>The unit
+the whole system counts in.</>} page={10} total={TOTAL} />],
+    ['s11', () => <TokenDefinition page={11} total={TOTAL} />],
+    ['s12', () => <BothSidesCount  page={12} total={TOTAL} />],
+    ['s13', () => <SectionDivider number="III" label="Context" title={<>Why long chats
+get <em>exponentially</em> expensive.</>} page={13} total={TOTAL} />],
+    ['s14', () => <ContextContents page={14} total={TOTAL} />],
+    ['s15', () => <BigNumber       page={15} total={TOTAL} />],
+    ['s16', () => <HiddenMechanic  page={16} total={TOTAL} />],
+    ['s17', () => <TurnComparison  page={17} total={TOTAL} />],
+    ['s18', () => <ThirtyTurnOpus  page={18} total={TOTAL} />],
+    ['s19', () => <SlowdownSignal  page={19} total={TOTAL} />],
+    ['s20', () => <SectionDivider number="IV" label="Usage" title={<>A weekly budget.
+A session ceiling. Three levers.</>} page={20} total={TOTAL} />],
+    ['s21', () => <WeeklyBudget    page={21} total={TOTAL} />],
+    ['s22', () => <CostDrivers     page={22} total={TOTAL} />],
+    ['s23', () => <UsageTab        page={23} total={TOTAL} />],
+    ['s24', () => <SectionDivider number="V" label="The decision rule" title={<>Two questions.
+Every time.</>} page={24} total={TOTAL} />],
+    ['s25', () => <TwoQuestions    page={25} total={TOTAL} />],
+    ['s26', () => <WorkedExamples  page={26} total={TOTAL} />],
+    ['s27', () => <HabitsAll       page={27} total={TOTAL} />],
+    ['s28', () => <SectionDivider number="VI" label="Closing" title={<>The decision rule
+and what to try this week.</>} page={28} total={TOTAL} />],
+    ['s29', () => <DecisionRecap   page={29} total={TOTAL} />],
+    ['s30', () => <TryThisWeek     page={30} total={TOTAL} />],
+    ['s31', () => <Landmark        page={31} total={TOTAL} />],
+    ['s32', () => <EndSlide />],
+  ];
+
+  slides.forEach(([id, factory]) => {
+    const el = document.getElementById(id);
+    if (el) ReactDOM.createRoot(el).render(factory());
+  });
+</script>
+
+</body>
+</html>

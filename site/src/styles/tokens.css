@@ -1,0 +1,29 @@
+/* Camp Claude — design tokens
+ * Warm editorial palette + three-font system. Matches brand-system.md. */
+
+:root {
+  /* palette */
+  --paper:      #F4EEE3;
+  --paper-soft: #EBE3D3;
+  --cream:      #FBF7EE;
+  --ink:        #1F1C17;
+  --ink-soft:   #3A352D;
+  --muted:      #807668;
+  --line:       rgba(31, 28, 23, 0.18);
+  --line-soft:  rgba(31, 28, 23, 0.10);
+  --rust:       #B5532A;
+  --rust-soft:  #D98962;
+  --sage:       #6B7A5A;
+
+  /* typography */
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans:  "Inter Tight", system-ui, sans-serif;
+  --mono:  "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+body { font-family: var(--sans); font-size: 17px; line-height: 1.55; }
+a { color: var(--rust); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; }
