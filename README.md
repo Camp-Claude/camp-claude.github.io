@@ -64,4 +64,9 @@ Camp Claude is open curriculum. Corrections, clarifications, and new modules wel
 
 ## License
 
-TBD.
+Dual-licensed:
+
+- **Code** (`site/`, `.github/`) — [MIT](LICENSE). Fork it, ship it, do what you want.
+- **Curriculum** (`content/`) — [CC BY-NC 4.0](LICENSE-CONTENT). Free to learn from, share, and adapt for non-commercial use with attribution.
+
+**Commercial use of the curriculum — including paid facilitator training, paid cohorts, and licensing to employers — requires a separate commercial license.** Contact us if you want to teach Camp Claude professionally.
