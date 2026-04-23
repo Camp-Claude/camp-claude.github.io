@@ -2,7 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const STRIPE_LINK_GA = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_97';
-const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
+const STRIPE_LINK_VIP_ACCESS = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_197';
+const STRIPE_LINK_VIP_ADMISSION = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
 ---
 
 <BaseLayout
@@ -20,15 +21,24 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
       <div class="dates-pill">
         Jun. 3, 4, 8  |  7:00 – 8:30 PM ET
       </div>
+      <div class="hero-offer">
+        <div class="hero-price">
+          <s>$147</s>
+          <strong>$97</strong>
+        </div>
+        <div class="hero-offer-copy">
+          Round 1 launch pricing · enrollment closes Tuesday, Jun. 2 · cohort capped at 30 seats
+        </div>
+      </div>
       <div class="hero-actions">
-        <a href={STRIPE_LINK_GA} class="cta-primary">Yes, I Want In — $97</a>
-        <a href="#pricing" class="cta-ghost">Or see the full VIP ticket →</a>
+        <a href={STRIPE_LINK_GA} class="cta-primary">Enroll for $97</a>
+        <a href="#pricing" class="cta-ghost">Compare all tickets →</a>
       </div>
     </div>
   </section>
 
   <!-- 2. Video testimonials -->
-  <section class="video-band">
+  <section class="video-band" id="stories">
     <div class="inner">
       <div class="video-band-intro">
         <div class="section-eyebrow center">What students are saying</div>
@@ -78,6 +88,11 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
       <p>You know the feeling. It's Wednesday at 4 PM and you realize you forgot about the tool entirely for three days. You try a new prompt and it's marginally better than the last one, but the output still needs 20 minutes of your editing before it's useable. You close the tab and go back to doing the work yourself.</p>
       <p>Then you read about someone building an AI agent that runs their entire business while they sleep and you think — <em>"what version of Claude are they using, because it's clearly not the one I have."</em></p>
       <p>They're using the same Claude you are. They just opened the other two doors.</p>
+      <div class="proof-note">
+        <div class="proof-note-kicker">Learner proof</div>
+        <p>The video stories above are here because this is the common starting point: capable professionals using AI as a tab, then realizing Claude can become part of the actual workflow.</p>
+        <a href="#stories">Watch the learner stories ↑</a>
+      </div>
     </div>
   </section>
 
@@ -215,6 +230,12 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
           <p>We'll build the same automation I use every weekday. You'll customize it to your inbox, your VIP senders, your tone. You'll schedule it to run tomorrow morning. And when you wake up, it will have done its first run. Without you. That's the moment.</p>
         </div>
       </div>
+
+      <div class="proof-note wide">
+        <div class="proof-note-kicker">What changes by Session 3</div>
+        <p>The outcome is not another notes doc. You leave able to name your skill, your connector, your cadence, and the work Claude will produce when you are not at your desk.</p>
+        <a href="#pricing">Choose your ticket →</a>
+      </div>
     </div>
   </section>
 
@@ -238,8 +259,14 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
           <span>Total value</span><span>$2,173</span>
         </div>
         <div class="stack-price">
-          <span>You pay</span><span>$97</span>
+          <span>You pay <small>Round 1 launch pricing</small></span><span><s>$147</s> $97</span>
         </div>
+      </div>
+
+      <div class="proof-note wide">
+        <div class="proof-note-kicker">Why the live room matters</div>
+        <p>The strongest value is the moment you build against your own account, your own tools, and your own morning workflow while someone can help you unstick it live.</p>
+        <a href="#stories">See the student videos ↑</a>
       </div>
     </div>
   </section>
@@ -248,12 +275,14 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
   <section class="strip cream" id="pricing">
     <div class="inner">
       <div class="section-eyebrow">Pick your ticket</div>
-      <h2 class="section-h2">Two tiers. <em>Same core product.</em></h2>
+      <h2 class="section-h2">Three tickets. <em>Same core build.</em></h2>
+      <p class="pricing-note">Round 1 closes Tuesday, Jun. 2. The cohort is capped at 30 seats; VIP Admission is capped at 10.</p>
 
       <div class="tiers">
         <div class="tier">
           <div class="tier-label">General Admission</div>
-          <div class="tier-price"><span class="currency">$</span>97</div>
+          <div class="tier-price"><s>$147</s><span class="currency">$</span>97</div>
+          <p class="tier-note">Base bootcamp ticket</p>
           <ul>
             <li>3 × 90-minute live sessions</li>
             <li>Kick-off call</li>
@@ -265,22 +294,34 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
             <li>Hot-seat session</li>
             <li>One automation running by Session 3</li>
           </ul>
-          <a href={STRIPE_LINK_GA} class="tier-cta">Join — $97</a>
+          <a href={STRIPE_LINK_GA} class="tier-cta">Enroll for $97</a>
         </div>
 
-        <div class="tier featured">
-          <div class="tier-label">VIP · Recommended</div>
-          <div class="tier-price"><span class="currency">$</span>297</div>
+        <div class="tier">
+          <div class="tier-label">VIP Access</div>
+          <div class="tier-price"><s>$297</s><span class="currency">$</span>197</div>
+          <p class="tier-note">Extra setup support and longer replay access</p>
           <ul class="more">
             <li><strong>Everything in General Admission, PLUS:</strong></li>
             <li>1:1 setup call with Brandon (30 min)</li>
             <li>6-month replay access (vs. 30-day)</li>
-            <li>Bonus session: <em>"Corporate Security Module preview"</em> — the governance pattern for regulated firms</li>
             <li>Priority Q&amp;A channel during cohort</li>
+          </ul>
+          <a href={STRIPE_LINK_VIP_ACCESS} class="tier-cta">Get VIP Access</a>
+        </div>
+
+        <div class="tier featured">
+          <div class="tier-label">VIP Admission · Recommended</div>
+          <div class="tier-badge">10 spots</div>
+          <div class="tier-price"><s>$497</s><span class="currency">$</span>297</div>
+          <p class="tier-note">Best fit if your work has industry-specific constraints</p>
+          <ul class="more">
+            <li><strong>Everything in VIP Access, PLUS:</strong></li>
+            <li>Bonus session: <em>"Corporate Security Module preview"</em> — the governance pattern for regulated firms</li>
             <li>50% off any future Camp Claude cohort (Foundations or Full)</li>
             <li>Industry-specific skill templates (pick your stack)</li>
           </ul>
-          <a href={STRIPE_LINK_VIP} class="tier-cta">Go VIP — $297</a>
+          <a href={STRIPE_LINK_VIP_ADMISSION} class="tier-cta">I want VIP Admission</a>
         </div>
       </div>
     </div>
@@ -349,7 +390,7 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
             <span>What if I can't attend live?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
-          <p>Every session is recorded and posted in the community within 24 hours. You can watch on your schedule and bring questions to the next live session. Replays are yours for 30 days (GA) or 6 months (VIP).</p>
+          <p>Every session is recorded and posted in the community within 24 hours. You can watch on your schedule and bring questions to the next live session. Replays are yours for 30 days with General Admission or 6 months with either VIP ticket.</p>
         </details>
         <details class="faq-item">
           <summary>
@@ -370,7 +411,7 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
             <span>How is this different from Foundations or the full cohort?</span>
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
-          <p>The Bootcamp is a three-session intensive with one automation as the outcome. Foundations is a four-session cohort with deeper coverage of the same material plus model selection and supervision. Full Camp Claude is a five-session, eight-week program with multiple automations and 1:1 coaching. Most people start at the Bootcamp. Some graduate into the others.</p>
+          <p>The Bootcamp is a three-session intensive with one automation as the outcome. Foundations is a four-session cohort with deeper coverage of the same material plus model selection and supervision. Full Camp Claude is a five-session, eight-week program with multiple automations and 1:1 coaching. Most people start at the Bootcamp; VIP Admission includes 50% off a future Foundations or Full cohort.</p>
         </details>
         <details class="faq-item">
           <summary>
@@ -388,10 +429,10 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
     <div class="inner final-cta">
       <div class="section-eyebrow center">Next cohort</div>
       <h2 class="final-h2">June 3, 4, 8.<br/><em>Thirty seats.</em></h2>
-      <p>Three live sessions. One automation running by the end. Full refund through Session 1 if it's not floor-you good.</p>
+      <p>Three live sessions. One automation running by the end. VIP Admission is capped at 10 seats. Full refund through Session 1 if it's not floor-you good.</p>
       <div class="final-actions">
-        <a href={STRIPE_LINK_GA} class="big-btn">Yes, I Want In — $97</a>
-        <a href={STRIPE_LINK_VIP} class="ghost-btn">Or go VIP — $297 →</a>
+        <a href={STRIPE_LINK_GA} class="big-btn">Yes · enroll now — $97</a>
+        <a href={STRIPE_LINK_VIP_ADMISSION} class="ghost-btn">I want VIP Admission — $297 →</a>
       </div>
       <p class="tiny">Secure checkout · Stripe · 100% refund through Session 1</p>
     </div>
@@ -411,6 +452,11 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
   h1 em { color: var(--rust); font-style: italic; }
   .dek { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.35; color: var(--ink-soft); margin: 0 0 28px; max-width: 58ch; }
   .dates-pill { display: inline-block; background: var(--sage); color: var(--paper); padding: 12px 24px; border-radius: 4px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; margin-bottom: 32px; }
+  .hero-offer { display: flex; align-items: center; gap: 22px; margin: -6px 0 30px; padding-top: 2px; }
+  .hero-price { display: flex; align-items: baseline; gap: 10px; font-family: var(--serif); font-style: italic; line-height: 1; color: var(--ink); }
+  .hero-price s { font-size: 32px; color: var(--muted); text-decoration-color: var(--rust); text-decoration-thickness: 2px; }
+  .hero-price strong { font-size: 56px; color: var(--rust); font-weight: 400; }
+  .hero-offer-copy { max-width: 48ch; font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; line-height: 1.6; text-transform: uppercase; color: var(--ink-soft); }
   .hero-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
   .cta-primary { display: inline-block; background: var(--ink); color: var(--paper); padding: 18px 32px; border-radius: 2px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: background 0.15s; }
   .cta-primary:hover { background: var(--rust); color: var(--paper); text-decoration: none; }
@@ -442,6 +488,14 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
   .strip p { font-size: 18px; line-height: 1.6; color: var(--ink-soft); max-width: 58ch; }
   .strip p em { color: var(--ink); font-style: italic; }
   .strip p strong { color: var(--ink); font-weight: 500; }
+
+  /* Distributed proof reminders */
+  .proof-note { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 24px; align-items: start; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .proof-note.wide { max-width: 980px; margin: 44px auto 0; }
+  .proof-note-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; line-height: 1.5; text-transform: uppercase; color: var(--rust); }
+  .proof-note p { margin: 0; max-width: 56ch; font-size: 16px; line-height: 1.55; color: var(--ink-soft); }
+  .proof-note a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; line-height: 1.4; text-transform: uppercase; color: var(--rust); border-bottom: 1px solid var(--rust); text-decoration: none; white-space: nowrap; }
+  .proof-note a:hover { color: var(--ink); border-bottom-color: var(--ink); text-decoration: none; }
 
   /* 5. Authority quote */
   .pull-quote { font-family: var(--serif); font-style: italic; font-size: 44px; line-height: 1.2; letter-spacing: -0.01em; color: var(--paper); margin: 0 0 24px; max-width: 800px; }
@@ -483,18 +537,26 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
   .stack-val { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.1em; text-align: right; }
   .stack-total { display: grid; grid-template-columns: 1fr 140px; padding: 20px 28px; background: var(--paper-soft); font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink); border-top: 1px solid var(--line); }
   .stack-total span:last-child { text-align: right; color: var(--muted); }
-  .stack-price { display: grid; grid-template-columns: 1fr 140px; padding: 24px 28px; background: var(--ink); color: var(--paper); font-family: var(--serif); font-style: italic; font-size: 32px; align-items: baseline; }
+  .stack-price { display: grid; grid-template-columns: 1fr 220px; padding: 24px 28px; background: var(--ink); color: var(--paper); font-family: var(--serif); font-style: italic; font-size: 32px; align-items: baseline; }
+  .stack-price small { display: block; margin-top: 6px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; line-height: 1.4; text-transform: uppercase; color: rgba(244,238,227,0.52); font-style: normal; }
   .stack-price span:last-child { text-align: right; color: var(--rust-soft); font-size: 52px; }
+  .stack-price s { margin-right: 12px; font-size: 30px; color: rgba(244,238,227,0.46); text-decoration-color: var(--rust-soft); text-decoration-thickness: 2px; }
 
   /* 11. Tiers */
-  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
-  .tier { background: var(--paper); padding: 44px 36px; border: 1px solid var(--line); border-radius: 3px; display: flex; flex-direction: column; }
+  .pricing-note { margin: -14px 0 34px; font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 58ch; }
+  .tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 24px; align-items: stretch; }
+  .tier { position: relative; background: var(--paper); padding: 40px 30px; border: 1px solid var(--line); border-radius: 3px; display: flex; flex-direction: column; }
   .tier.featured { background: var(--ink); color: var(--paper); border: none; }
   .tier-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 14px; }
   .tier.featured .tier-label { color: var(--rust-soft); }
-  .tier-price { font-family: var(--serif); font-size: 88px; line-height: 1; letter-spacing: -0.03em; font-style: italic; margin: 0 0 28px; }
+  .tier-badge { position: absolute; top: 28px; right: 28px; padding: 6px 9px; border: 1px solid rgba(244,238,227,0.22); border-radius: 999px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; line-height: 1; text-transform: uppercase; color: var(--rust-soft); }
+  .tier-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; font-family: var(--serif); font-size: 78px; line-height: 1; letter-spacing: 0; font-style: italic; margin: 0 0 8px; }
+  .tier-price s { margin-right: 2px; font-family: var(--mono); font-size: 18px; letter-spacing: 0.04em; color: var(--muted); text-decoration-color: var(--rust); text-decoration-thickness: 2px; font-style: normal; }
+  .tier.featured .tier-price s { color: rgba(244,238,227,0.46); text-decoration-color: var(--rust-soft); }
   .tier-price .currency { font-size: 36px; vertical-align: super; color: var(--rust); margin-right: 6px; }
   .tier.featured .tier-price .currency { color: var(--rust-soft); }
+  .tier .tier-note { margin: 0 0 24px; max-width: none; min-height: 48px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+  .tier.featured .tier-note { color: rgba(244,238,227,0.64); }
   .tier ul { list-style: none; padding: 0; margin: 0 0 28px; }
   .tier li { padding: 10px 0; font-size: 14px; line-height: 1.45; border-top: 1px solid var(--line-soft); display: flex; gap: 12px; }
   .tier.featured li { border-top-color: rgba(244,238,227,0.12); }
@@ -575,20 +637,35 @@ const STRIPE_LINK_VIP = 'https://buy.stripe.com/REPLACE_WITH_PAYMENT_LINK_297';
     .hero { padding: 40px 24px; }
     h1 { font-size: 44px; }
     .dek { font-size: 20px; }
+    .dates-pill { font-size: 11px; line-height: 1.45; }
+    .hero-offer { align-items: flex-start; flex-direction: column; gap: 8px; margin: -6px 0 26px; }
+    .hero-price strong { font-size: 46px; }
+    .hero-price s { font-size: 26px; }
+    .hero-offer-copy { font-size: 10px; letter-spacing: 0.12em; }
     .video-band { padding: 40px 24px; }
     .video-band-h2 { font-size: 30px; }
     .video-grid { grid-template-columns: 1fr; gap: 16px; }
     .section-h2 { font-size: 32px; }
+    .proof-note,
+    .proof-note.wide { grid-template-columns: 1fr; gap: 10px; margin-top: 32px; }
+    .proof-note a { justify-self: start; white-space: normal; }
     .reframe .section-h2 { font-size: 36px; }
     .pull-quote { font-size: 28px; }
     .vs-table { grid-template-columns: 1fr; }
     .session { grid-template-columns: 1fr; gap: 16px; }
     .tiers { grid-template-columns: 1fr; }
+    .tier { padding: 36px 28px; }
+    .tier-badge { position: static; align-self: flex-start; margin: -4px 0 14px; color: var(--rust-soft); }
+    .tier-price { font-size: 64px; }
+    .tier .tier-note { min-height: auto; }
     .guarantee-inner { grid-template-columns: 1fr; gap: 24px; }
     .guarantee-badge { margin: 0 auto; }
     .final-h2 { font-size: 42px; }
-    .stack-total, .stack-price { grid-template-columns: 1fr 100px; }
+    .stack-total, .stack-price { grid-template-columns: 1fr; gap: 8px; }
+    .stack-total span:last-child,
+    .stack-price span:last-child { text-align: left; }
     .stack-price span:last-child { font-size: 36px; }
+    .stack-price s { font-size: 22px; }
     .strip { padding: 48px 24px; }
   }
 </style>
