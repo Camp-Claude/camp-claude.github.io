@@ -10,7 +10,7 @@ import sitemap from '@astrojs/sitemap';
 const isGhPages = process.env.GH_PAGES === 'true';
 
 export default defineConfig({
-  site: isGhPages ? 'https://learn-rudi.github.io' : 'https://campclaude.ai',
+  site: isGhPages ? 'https://camp-claude.github.io' : 'https://campclaude.ai',
   base: isGhPages ? '/campclaude' : undefined,
   output: 'static',
   trailingSlash: 'ignore',
