@@ -30,11 +30,11 @@
   "Three answers split. Words → Chat. Files in a folder → Cowork. Changes across your system → Code. Simple.",
   "Worked examples. Walk through each. Let them see the rule applied.",
   "Section marker. The pipeline.",
-  "They're not competitors. Chat produces thinking. Cowork acts on it. Code extends beyond one folder. That's a pipeline.",
+  "They're stages of one workflow — not alternatives. Let s17 show the visual.",
   "Think → Act → Build. The arrow across the three surfaces. Most work lives in the first two.",
   "The common path: think in Chat, act in Cowork, maybe graduate to Code. Preview Sessions 2–4 lightly.",
-  "Section marker. Why Cowork is the upgrade.",
-  "Name what they're here for. This is where ChatGPT breaks down and Claude becomes different.",
+  "Section marker. Door two — neutral transition into the Cowork deep-dive.",
+  "Name what they're here for. The sandbox explanation follows on s21; s22 makes the Canvas contrast.",
   "The sandbox. One-sentence rule: 'Claude can see everything in the folder you hand it, and nothing outside.' Repeat it.",
   "Why ChatGPT can't do this. Canvas is cute; Cowork actually works on your real files. Real guardrails.",
   "Section marker. Code — named, not taught.",
@@ -43,8 +43,7 @@
   "Section marker. Closing.",
   "Landmark language. The three phrases. Say them out loud together. These travel.",
   "Their setup for today: install the desktop app, log in, click through the three tabs. Nothing else required.",
-  "Try this week: before every Claude conversation, ask 'which door?' Make the choice conscious.",
-  "Graduation moment. Name it. 'You can pick the right door before you type.' That's the session's aim.",
+  "Graduation moment. Name it. 'You can pick the right door before you type.' Homework: five times this week, out loud.",
   "Preview Session 2 — Chat in depth, Projects, Context, Models. Next week, same time.",
   "Questions. Open it up."
 ]
@@ -81,10 +80,9 @@
   <section data-label="Part VI · Closing"     id="s26"></section>
   <section data-label="Landmark Language"     id="s27"></section>
   <section data-label="Your Setup Today"      id="s28"></section>
-  <section data-label="Try This Week"         id="s29"></section>
-  <section data-label="Graduation Moment"     id="s30"></section>
-  <section data-label="Next Session"          id="s31"></section>
-  <section data-label="Questions"             id="s32"></section>
+  <section data-label="Graduation Moment"     id="s29"></section>
+  <section data-label="Next Session"          id="s30"></section>
+  <section data-label="Questions"             id="s31"></section>
 </deck-stage>
 
 <script src="deck-stage.js"></script>
@@ -768,9 +766,7 @@ function NotCompetitors({ page, total }) {
         </Title>
         <div style={{ height: 48 }} />
         <Body size={TYPE_SCALE.lead} style={{ maxWidth: 1300, fontWeight: 300, color: COLORS.inkSoft }}>
-          They&rsquo;re stages of a pipeline. You&rsquo;ll move between them in a single afternoon —
-          thinking in Chat, acting in Cowork, and occasionally reaching into Code when the work
-          calls for it. The skill is knowing which door the current moment needs.
+          They&rsquo;re stages of one workflow.
         </Body>
       </div>
     </Frame>
@@ -870,8 +866,7 @@ function WhyCowork({ page, total }) {
         </div>
         <div style={{ height: 56 }} />
         <Body size={TYPE_SCALE.lead} style={{ maxWidth: 1400, fontWeight: 300, color: COLORS.inkSoft }}>
-          Chat can talk about your files. Cowork can actually touch them —
-          inside a sandbox you control. That&rsquo;s the leap. That&rsquo;s why Camp Claude exists.
+          Inside a sandbox you control. That&rsquo;s the leap. That&rsquo;s why Camp Claude exists.
         </Body>
       </div>
     </Frame>
@@ -1156,6 +1151,7 @@ function Graduation({ page, total }) {
         <Body size={TYPE_SCALE.body} color="rgba(244,238,227,0.65)" style={{ maxWidth: 1100 }}>
           If you can answer &ldquo;which door?&rdquo; before you open your mouth,
           you&rsquo;ve already outgrown 90% of ChatGPT users.
+          Try it five times this week — out loud if you can.
         </Body>
       </div>
     </Frame>
@@ -1243,13 +1239,13 @@ function EndSlide() {
 </script>
 
 <script type="text/babel">
-  const TOTAL = 32;
+  const TOTAL = 31;
 
   const slides = [
     ['s01', () => <TitleSlide />],
     ['s02', () => <WhyMatters page={2} total={TOTAL} />],
     ['s03', () => <OneSentence page={3} total={TOTAL} />],
-    ['s04', () => <SectionDivider number="I"  label="The three doors" title={<>Same account.<br/>Three workspaces.</>} page={4} total={TOTAL} />],
+    ['s04', () => <SectionDivider number="I"  label="The three doors" title={<>The territory.</>} page={4} total={TOTAL} />],
     ['s05', () => <ThreeDoorsHero page={5} total={TOTAL} />],
     ['s06', () => <DoorProfile page={6} total={TOTAL}
       name="Chat" tag="The chatbot · door one" door="chat"
@@ -1303,7 +1299,7 @@ function EndSlide() {
     ['s16', () => <NotCompetitors page={16} total={TOTAL} />],
     ['s17', () => <ThinkActBuild  page={17} total={TOTAL} />],
     ['s18', () => <CommonPath     page={18} total={TOTAL} />],
-    ['s19', () => <SectionDivider number="IV" label="Cowork in context" title={<>Where ChatGPT stops,<br/>Cowork <em>begins</em>.</>} page={19} total={TOTAL} />],
+    ['s19', () => <SectionDivider number="IV" label="Cowork in context" title={<>Door two:<br/><em>Cowork.</em></>} page={19} total={TOTAL} />],
     ['s20', () => <WhyCowork      page={20} total={TOTAL} />],
     ['s21', () => <TheSandbox     page={21} total={TOTAL} />],
     ['s22', () => <BeyondCanvas   page={22} total={TOTAL} />],
@@ -1313,10 +1309,9 @@ function EndSlide() {
     ['s26', () => <SectionDivider number="VI" label="Closing" title={<>Three doors.<br/>One choice at a time.</>} page={26} total={TOTAL} />],
     ['s27', () => <Landmark       page={27} total={TOTAL} />],
     ['s28', () => <SetupToday     page={28} total={TOTAL} />],
-    ['s29', () => <TryThisWeek    page={29} total={TOTAL} />],
-    ['s30', () => <Graduation     page={30} total={TOTAL} />],
-    ['s31', () => <NextSession    page={31} total={TOTAL} />],
-    ['s32', () => <EndSlide />],
+    ['s29', () => <Graduation     page={29} total={TOTAL} />],
+    ['s30', () => <NextSession    page={30} total={TOTAL} />],
+    ['s31', () => <EndSlide />],
   ];
 
   slides.forEach(([id, factory]) => {
