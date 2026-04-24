@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # astro
 .astro/
+
+# synced from content/decks by scripts/copy-decks.mjs
+public/decks/

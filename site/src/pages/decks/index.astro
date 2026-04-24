@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { readdirSync, readFileSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+// Build-time: enumerate decks from ../../../content/decks relative to this file.
+// Each deck is a directory with an index.html. We extract the <title> for the list.
+const decksDir = new URL('../../../../content/decks/', import.meta.url).pathname;
+
+type DeckEntry = {
+  slug: string;
+  title: string;
+  session?: string;
+  topic?: string;
+};
+
+const decks: DeckEntry[] = [];
+
+if (existsSync(decksDir)) {
+  const dirs = readdirSync(decksDir, { withFileTypes: true })
+    .filter((e) => e.isDirectory())
+    .map((e) => e.name)
+    .sort();
+
+  for (const slug of dirs) {
+    const indexHtml = join(decksDir, slug, 'index.html');
+    if (!existsSync(indexHtml)) continue;
+    const html = readFileSync(indexHtml, 'utf8');
+    const match = html.match(/<title>([^<]*)<\/title>/i);
+    const rawTitle = match ? match[1].trim() : slug;
+
+    // "Camp Claude Foundations · Session 01 · Three Doors" → split on the bullet
+    const parts = rawTitle.split('·').map((s) => s.trim());
+    let session: string | undefined;
+    let topic: string | undefined;
+    if (parts.length >= 3) {
+      session = parts[1];
+      topic = parts.slice(2).join(' · ');
+    } else if (parts.length === 2) {
+      topic = parts[1];
+    } else {
+      topic = rawTitle;
+    }
+
+    decks.push({ slug, title: rawTitle, session, topic });
+  }
+}
+
+// Order: foundations sessions first in numeric order, then everything else alphabetically.
+decks.sort((a, b) => {
+  const aFound = a.slug.startsWith('foundations-session-');
+  const bFound = b.slug.startsWith('foundations-session-');
+  if (aFound && bFound) return a.slug.localeCompare(b.slug);
+  if (aFound) return -1;
+  if (bFound) return 1;
+  return a.slug.localeCompare(b.slug);
+});
+---
+
+<BaseLayout
+  title="Decks · Camp Claude"
+  description="Live teaching decks from Camp Claude Foundations and topic sessions."
+  activeNav="learn"
+>
+  <section class="hero">
+    <div class="eyebrow">Teaching decks</div>
+    <h1>Decks we <em>teach from</em>.</h1>
+    <p class="dek">The live slides Brandon uses for Camp Claude Foundations and topic sessions. Open one, tap space to advance. Speaker notes live inside each deck.</p>
+  </section>
+
+  <section class="strip">
+    <div class="inner">
+      <div class="section-eyebrow">All decks</div>
+      <h2 class="section-h2">Pick a <em>session</em>.</h2>
+
+      <div class="article-list">
+        {decks.map((d) => (
+          <a class="article-row" href={`/decks/${d.slug}/`}>
+            <div class="module-num">{d.session ?? 'Deck'}</div>
+            <div>
+              <h3>{d.topic}</h3>
+              <div class="tier">Free · Teaching deck</div>
+            </div>
+            <div></div>
+            <div class="read-time">Open <span class="arrow">→</span></div>
+          </a>
+        ))}
+        {decks.length === 0 && (
+          <p class="empty">No decks have been synced yet. Run <code>npm run copy-decks</code> to mirror <code>content/decks/</code>.</p>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { max-width: 1200px; margin: 0 auto; padding: 72px 48px 40px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 24px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: 88px; line-height: 0.98; letter-spacing: -0.025em; color: var(--ink); margin: 0 0 28px; max-width: 18ch; text-wrap: balance; }
+  h1 em { color: var(--rust); font-style: italic; }
+  .dek { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1.3; color: var(--ink-soft); margin: 0; max-width: 52ch; text-wrap: pretty; }
+
+  .strip { padding: 88px 48px; border-top: 1px solid var(--line); }
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 18px; }
+  .section-h2 { font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 32px; text-wrap: balance; }
+  .section-h2 em { color: var(--rust); font-style: italic; }
+
+  .article-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .article-row { display: grid; grid-template-columns: 140px 1fr 200px 100px; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--line-soft); align-items: baseline; text-decoration: none; color: inherit; transition: background 0.12s; }
+  .article-row:hover { background: var(--cream); text-decoration: none; }
+  .article-row .module-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); }
+  .article-row h3 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .article-row .tier { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); margin-top: 4px; }
+  .article-row .read-time { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); text-align: right; white-space: nowrap; }
+  .article-row .arrow { display: inline-block; margin-left: 8px; color: var(--muted); transition: transform 0.15s, color 0.15s; }
+  .article-row:hover .arrow { color: var(--rust); transform: translateX(4px); }
+
+  .empty { font-family: var(--mono); font-size: 13px; color: var(--muted); padding: 24px 0; }
+  .empty code { background: var(--cream); padding: 2px 6px; border-radius: 2px; }
+
+  @media (max-width: 960px) {
+    .hero { padding: 48px 24px 24px; }
+    h1 { font-size: 48px; }
+    .dek { font-size: 22px; }
+    .section-h2 { font-size: 36px; }
+    .article-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
+    .article-row .read-time { text-align: left; }
+    .strip { padding: 56px 24px; }
+  }
+</style>

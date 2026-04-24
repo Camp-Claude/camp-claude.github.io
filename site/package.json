@@ -5,11 +5,14 @@
   "description": "Camp Claude — the open curriculum for working with Claude. Static Astro site.",
   "private": true,
   "scripts": {
+    "predev": "node scripts/copy-decks.mjs",
     "dev": "astro dev",
     "start": "astro dev",
+    "prebuild": "node scripts/copy-decks.mjs",
     "build": "astro build",
     "preview": "astro preview --host --port 4321",
-    "astro": "astro"
+    "astro": "astro",
+    "copy-decks": "node scripts/copy-decks.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
