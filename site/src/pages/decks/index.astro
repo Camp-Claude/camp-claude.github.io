@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 
-// Build-time: enumerate decks from ../../../content/decks relative to this file.
+// Build-time: enumerate decks from public/decks (populated by scripts/copy-decks.mjs).
 // Each deck is a directory with an index.html. We extract the <title> for the list.
-const decksDir = new URL('../../../../content/decks/', import.meta.url).pathname;
+const decksDir = resolve(process.cwd(), 'public/decks');
 
 type DeckEntry = {
   slug: string;
